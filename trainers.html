@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coaches & Trainers — PULSE FITNESS CLUB</title>
+  <meta name="description" content="Meet our certified coaching staff: CSCS strength coaches, Olympic weightlifting specialists, and physical restoration experts at Pulse Fitness Club.">
+  <meta property="og:title" content="Coaches & Trainers — PULSE FITNESS CLUB">
+  <meta property="og:description" content="Elite sports coaching with certified credentials, science-backed periodization, and zero guesswork.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B0D0C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D0C'/%3E%3Cpath d='M4 16h6l3-8 6 16 3-8h6' stroke='%23C6FF00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB Homepage">
+        <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        
+        <div class="nav-item-dropdown">
+          <a href="classes.html" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Programs <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="classes.html#group-classes" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Group Classes <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">HIIT, Hyrox, mobility & strength camps</span>
+            </a>
+            <a href="classes.html#personal-training" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Personal Training <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">1-on-1 coaching & tailored biomechanics</span>
+            </a>
+            <a href="classes.html#facilities-recovery" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Facilities & Recovery <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">Hydrotherapy, saunas & open turf zones</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="trainers.html" class="nav-link active">Trainers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link">
+          <i class="fa-regular fa-user"></i>
+          <span>Member Login</span>
+        </a>
+        <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+    <!-- Mobile Drawer & Overlay -->
+  <div class="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY HOME">
+        <img src="logo.webp" alt="STACKLY" class="brand-logo-img">
+      </a>
+      <button type="button" class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="classes.html" class="mobile-nav-link">Programs</a>
+      <a href="trainers.html" class="mobile-nav-link active">Trainers</a>
+      <a href="membership.html" class="mobile-nav-link">Membership Plans</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="login.html" class="mobile-nav-link mobile-nav-link-auth">
+        <i class="fa-solid fa-right-to-bracket"></i> Member Sign In
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-current" aria-current="page">Coaching Staff</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="eyebrow">Human Performance Faculty</span>
+        <h1 class="page-hero-title">COACHES DEDICATED TO YOUR <span class="text-accent">ASCENT</span>.</h1>
+        <p class="page-hero-subtitle">
+          Every coach at Pulse Fitness Club holds collegiate or international performance credentials. We measure success by your technical safety, athletic durability, and personal records.
+        </p>
+
+        <!-- Search and Category Filters -->
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 28px;">
+          <div class="schedule-category-filters" style="justify-content: flex-start; margin-top: 0;">
+            <button class="cat-filter-btn active trainer-filter-btn" data-filter="all">All Specialties</button>
+            <button class="cat-filter-btn trainer-filter-btn" data-filter="strength">Strength & Olympic</button>
+            <button class="cat-filter-btn trainer-filter-btn" data-filter="conditioning">Speed & Conditioning</button>
+            <button class="cat-filter-btn trainer-filter-btn" data-filter="mobility">Mobility & Rehab</button>
+            <button class="cat-filter-btn trainer-filter-btn" data-filter="combat">Combat & Striking</button>
+          </div>
+
+          <div style="max-width: 280px; width: 100%; position: relative;">
+            <input type="text" id="trainerSearchInput" class="form-control" placeholder="Search coach by name..." style="padding: 10px 14px 10px 36px; font-size: 0.85rem;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.85rem;"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Athletic Kinetic Ticker Ribbon -->
+  <div class="athletic-marquee-wrap" aria-hidden="true">
+    <div class="athletic-marquee-track">
+      <div class="athletic-marquee-item"><i class="fa-solid fa-medal item-accent"></i> <span>CSCS / USAW / FRC ACCREDITED</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-heart-pulse item-accent"></i> <span>PERIODIZED PROGRAMMING</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-graduation-cap item-accent"></i> <span>MASTERS IN KINESIOLOGY</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-user-shield item-accent"></i> <span>JOINT LONGEVITY & DURABILITY</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-medal item-accent"></i> <span>CSCS / USAW / FRC ACCREDITED</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-heart-pulse item-accent"></i> <span>PERIODIZED PROGRAMMING</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-graduation-cap item-accent"></i> <span>MASTERS IN KINESIOLOGY</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-user-shield item-accent"></i> <span>JOINT LONGEVITY & DURABILITY</span> <span class="item-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- Trainers Directory Grid -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="trainers-grid" id="trainersDirectory">
+        <!-- Trainer 1 -->
+        <article class="trainer-card" id="marcus-stone" data-specialty="conditioning">
+          <div class="trainer-photo-wrap btn-view-trainer-bio" style="cursor: pointer;"
+               data-name="Marcus Stone"
+               data-spec="Head of Human Performance"
+               data-cred="CSCS / EXOS Certified"
+               data-img="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80"
+               data-bio="10+ years coaching collegiate sprinters and HYROX competitors. Specialist in rate of force development (RFD), sprint mechanics, and metabolic conditioning."
+               data-edu="M.Sc. Exercise Physiology"
+               data-exp="10+ Years Elite Coaching"
+               data-coach-param="Marcus Stone">
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80" alt="Marcus Stone - Head Coach" loading="lazy">
+            <span class="badge badge-lime trainer-cred-badge">CSCS / EXOS Certified</span>
+          </div>
+          <div class="trainer-body">
+            <div>
+              <h3 class="trainer-name">Marcus Stone</h3>
+              <div class="trainer-specialty">Head of Human Performance</div>
+              <p class="trainer-bio">10+ years coaching collegiate sprinters and HYROX competitors. Specialist in rate of force development (RFD), sprint mechanics, and metabolic conditioning.</p>
+              <div style="font-size: 0.775rem; color: #8E9290; margin-top: 8px;">
+                <i class="fa-solid fa-graduation-cap text-accent"></i> M.Sc. Exercise Physiology
+              </div>
+            </div>
+            <div class="trainer-footer" style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
+                      data-name="Marcus Stone"
+                      data-spec="Head of Human Performance"
+                      data-cred="CSCS / EXOS Certified"
+                      data-img="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80"
+                      data-bio="10+ years coaching collegiate sprinters and HYROX competitors. Specialist in rate of force development (RFD), sprint mechanics, and metabolic conditioning."
+                      data-edu="M.Sc. Exercise Physiology"
+                      data-exp="10+ Years Elite Coaching"
+                      data-coach-param="Marcus Stone">
+                <i class="fa-solid fa-user"></i> View Bio
+              </button>
+              <a href="training.html?coach=Marcus%20Stone" class="btn btn-primary btn-sm" style="flex: 1;">
+                Consult <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Trainer 2 -->
+        <article class="trainer-card" id="elena-rostova" data-specialty="mobility">
+          <div class="trainer-photo-wrap btn-view-trainer-bio" style="cursor: pointer;"
+               data-name="Elena Rostova"
+               data-spec="Mobility & Neuromuscular Rehab"
+               data-cred="FRCms / 500-RYT"
+               data-img="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80"
+               data-bio="Specialist in Functional Range Conditioning (FRC), controlled articular rotations (CARs), spine decompression, and down-regulating athletic over-training."
+               data-edu="B.S. Kinesiology & Biomechanics"
+               data-exp="8+ Years Mobility Specialization"
+               data-coach-param="Elena Rostova">
+            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80" alt="Elena Rostova - Mobility Specialist" loading="lazy">
+            <span class="badge badge-lime trainer-cred-badge">FRCms / 500-RYT</span>
+          </div>
+          <div class="trainer-body">
+            <div>
+              <h3 class="trainer-name">Elena Rostova</h3>
+              <div class="trainer-specialty">Mobility & Neuromuscular Rehab</div>
+              <p class="trainer-bio">Specialist in Functional Range Conditioning (FRC), controlled articular rotations (CARs), spine decompression, and down-regulating athletic over-training.</p>
+              <div style="font-size: 0.775rem; color: #8E9290; margin-top: 8px;">
+                <i class="fa-solid fa-graduation-cap text-accent"></i> B.S. Kinesiology & Biomechanics
+              </div>
+            </div>
+            <div class="trainer-footer" style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
+                      data-name="Elena Rostova"
+                      data-spec="Mobility & Neuromuscular Rehab"
+                      data-cred="FRCms / 500-RYT"
+                      data-img="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80"
+                      data-bio="Specialist in Functional Range Conditioning (FRC), controlled articular rotations (CARs), spine decompression, and down-regulating athletic over-training."
+                      data-edu="B.S. Kinesiology & Biomechanics"
+                      data-exp="8+ Years Mobility Specialization"
+                      data-coach-param="Elena Rostova">
+                <i class="fa-solid fa-user"></i> View Bio
+              </button>
+              <a href="training.html?coach=Elena%20Rostova" class="btn btn-primary btn-sm" style="flex: 1;">
+                Consult <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Trainer 3 -->
+        <article class="trainer-card" id="dmitri-volkov" data-specialty="strength">
+          <div class="trainer-photo-wrap btn-view-trainer-bio" style="cursor: pointer;"
+               data-name="Dmitri Volkov"
+               data-spec="Olympic Weightlifting & Strength"
+               data-cred="USAW Level 2 / CSCS"
+               data-img="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80"
+               data-bio="Former national competitive lifter specializing in barbell trajectory, snatch turnover, clean & jerk cycles, and safe heavy back squat periodization."
+               data-edu="12 Years Barbell Coaching"
+               data-exp="USAW Level 2 Lead Coach"
+               data-coach-param="Dmitri Volkov">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Dmitri Volkov - Olympic Coach" loading="lazy">
+            <span class="badge badge-lime trainer-cred-badge">USAW Level 2 / CSCS</span>
+          </div>
+          <div class="trainer-body">
+            <div>
+              <h3 class="trainer-name">Dmitri Volkov</h3>
+              <div class="trainer-specialty">Olympic Weightlifting & Strength</div>
+              <p class="trainer-bio">Former national competitive lifter specializing in barbell trajectory, snatch turnover, clean & jerk cycles, and safe heavy back squat periodization.</p>
+              <div style="font-size: 0.775rem; color: #8E9290; margin-top: 8px;">
+                <i class="fa-solid fa-graduation-cap text-accent"></i> 12 Years Barbell Coaching
+              </div>
+            </div>
+            <div class="trainer-footer" style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
+                      data-name="Dmitri Volkov"
+                      data-spec="Olympic Weightlifting & Strength"
+                      data-cred="USAW Level 2 / CSCS"
+                      data-img="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80"
+                      data-bio="Former national competitive lifter specializing in barbell trajectory, snatch turnover, clean & jerk cycles, and safe heavy back squat periodization."
+                      data-edu="12 Years Barbell Coaching"
+                      data-exp="USAW Level 2 Lead Coach"
+                      data-coach-param="Dmitri Volkov">
+                <i class="fa-solid fa-user"></i> View Bio
+              </button>
+              <a href="training.html?coach=Dmitri%20Volkov" class="btn btn-primary btn-sm" style="flex: 1;">
+                Consult <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Trainer 4 -->
+        <article class="trainer-card" id="sarah-jenkins" data-specialty="conditioning">
+          <div class="trainer-photo-wrap btn-view-trainer-bio" style="cursor: pointer;"
+               data-name="Sarah Jenkins"
+               data-spec="Metabolic Engine & Body Re-comp"
+               data-cred="NASM-CPT / Precision Nut."
+               data-img="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
+               data-bio="Passionate conditioning coach focusing on high-tempo functional squad circuits, kettlebell efficiency, and sustainable macronutrient fueling systems."
+               data-edu="Precision Nutrition Level 2"
+               data-exp="7+ Years High-Performance Coaching"
+               data-coach-param="Sarah Jenkins">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" alt="Sarah Jenkins - Metabolic Coach" loading="lazy">
+            <span class="badge badge-lime trainer-cred-badge">NASM-CPT / Precision Nut.</span>
+          </div>
+          <div class="trainer-body">
+            <div>
+              <h3 class="trainer-name">Sarah Jenkins</h3>
+              <div class="trainer-specialty">Metabolic Engine & Body Re-comp</div>
+              <p class="trainer-bio">Passionate conditioning coach focusing on high-tempo functional squad circuits, kettlebell efficiency, and sustainable macronutrient fueling systems.</p>
+              <div style="font-size: 0.775rem; color: #8E9290; margin-top: 8px;">
+                <i class="fa-solid fa-graduation-cap text-accent"></i> Precision Nutrition Level 2
+              </div>
+            </div>
+            <div class="trainer-footer" style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
+                      data-name="Sarah Jenkins"
+                      data-spec="Metabolic Engine & Body Re-comp"
+                      data-cred="NASM-CPT / Precision Nut."
+                      data-img="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
+                      data-bio="Passionate conditioning coach focusing on high-tempo functional squad circuits, kettlebell efficiency, and sustainable macronutrient fueling systems."
+                      data-edu="Precision Nutrition Level 2"
+                      data-exp="7+ Years High-Performance Coaching"
+                      data-coach-param="Sarah Jenkins">
+                <i class="fa-solid fa-user"></i> View Bio
+              </button>
+              <a href="training.html?coach=Sarah%20Jenkins" class="btn btn-primary btn-sm" style="flex: 1;">
+                Consult <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Trainer 5 -->
+        <article class="trainer-card" id="tariq-vance" data-specialty="combat">
+          <div class="trainer-photo-wrap btn-view-trainer-bio" style="cursor: pointer;"
+               data-name="Tariq Vance"
+               data-spec="Striking & Combat Conditioning"
+               data-cred="Golden Gloves / NASM-PES"
+               data-img="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+               data-bio="Professional boxing and kickboxing coach teaching authentic pad work, rotational core kinetics, high-speed evasion, and anaerobic endurance."
+               data-edu="9 Years Fight Camp Coaching"
+               data-exp="NASM Performance Enhancement Specialist"
+               data-coach-param="Tariq Vance">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80" alt="Tariq Vance - Combat Coach" loading="lazy">
+            <span class="badge badge-lime trainer-cred-badge">Golden Gloves / NASM-PES</span>
+          </div>
+          <div class="trainer-body">
+            <div>
+              <h3 class="trainer-name">Tariq Vance</h3>
+              <div class="trainer-specialty">Striking & Combat Conditioning</div>
+              <p class="trainer-bio">Professional boxing and kickboxing coach teaching authentic pad work, rotational core kinetics, high-speed evasion, and anaerobic endurance.</p>
+              <div style="font-size: 0.775rem; color: #8E9290; margin-top: 8px;">
+                <i class="fa-solid fa-graduation-cap text-accent"></i> 9 Years Fight Camp Coaching
+              </div>
+            </div>
+            <div class="trainer-footer" style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
+                      data-name="Tariq Vance"
+                      data-spec="Striking & Combat Conditioning"
+                      data-cred="Golden Gloves / NASM-PES"
+                      data-img="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+                      data-bio="Professional boxing and kickboxing coach teaching authentic pad work, rotational core kinetics, high-speed evasion, and anaerobic endurance."
+                      data-edu="9 Years Fight Camp Coaching"
+                      data-exp="NASM Performance Enhancement Specialist"
+                      data-coach-param="Tariq Vance">
+                <i class="fa-solid fa-user"></i> View Bio
+              </button>
+              <a href="training.html?coach=Tariq%20Vance" class="btn btn-primary btn-sm" style="flex: 1;">
+                Consult <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Trainer 6 -->
+        <article class="trainer-card" id="ananya-sen" data-specialty="strength">
+          <div class="trainer-photo-wrap btn-view-trainer-bio" style="cursor: pointer;"
+               data-name="Ananya Sen"
+               data-spec="Powerlifting & Hypertrophy"
+               data-cred="IPF Certified / CSCS"
+               data-img="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80"
+               data-bio="National record-holding powerlifter specializing in female athletic performance, deadlift leverage mechanics, and intelligent recovery protocols."
+               data-edu="B.S. Sports Science"
+               data-exp="IPF Certified National Powerlifting Coach"
+               data-coach-param="Ananya Sen">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80" alt="Ananya Sen - Powerlifting Coach" loading="lazy">
+            <span class="badge badge-lime trainer-cred-badge">IPF Certified / CSCS</span>
+          </div>
+          <div class="trainer-body">
+            <div>
+              <h3 class="trainer-name">Ananya Sen</h3>
+              <div class="trainer-specialty">Powerlifting & Hypertrophy</div>
+              <p class="trainer-bio">National record-holding powerlifter specializing in female athletic performance, deadlift leverage mechanics, and intelligent recovery protocols.</p>
+              <div style="font-size: 0.775rem; color: #8E9290; margin-top: 8px;">
+                <i class="fa-solid fa-graduation-cap text-accent"></i> B.S. Sports Science
+              </div>
+            </div>
+            <div class="trainer-footer" style="display: flex; gap: 8px;">
+              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
+                      data-name="Ananya Sen"
+                      data-spec="Powerlifting & Hypertrophy"
+                      data-cred="IPF Certified / CSCS"
+                      data-img="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80"
+                      data-bio="National record-holding powerlifter specializing in female athletic performance, deadlift leverage mechanics, and intelligent recovery protocols."
+                      data-edu="B.S. Sports Science"
+                      data-exp="IPF Certified National Powerlifting Coach"
+                      data-coach-param="Ananya Sen">
+                <i class="fa-solid fa-user"></i> View Bio
+              </button>
+              <a href="training.html?coach=Ananya%20Sen" class="btn btn-primary btn-sm" style="flex: 1;">
+                Consult <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Modal: Trainer Detail Profile Modal -->
+  <div class="modal-backdrop" id="trainerDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalTrainerName">
+    <div class="modal-dialog" style="max-width: 680px;">
+      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: flex-start;" class="why-us-pillars">
+        <div style="border-radius: var(--radius-xs); overflow: hidden; border: 1px solid var(--color-border); aspect-ratio: 4/5;">
+          <img id="modalTrainerImg" src="" alt="Coach photo" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div>
+          <span class="badge badge-lime" id="modalTrainerCred" style="margin-bottom: 8px;">CSCS Certified</span>
+          <h2 id="modalTrainerName" style="font-size: 1.6rem; margin-bottom: 4px;">Coach Name</h2>
+          <div id="modalTrainerSpec" style="font-family: var(--font-heading); color: var(--color-accent); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 14px;">Specialty</div>
+          <p id="modalTrainerBio" style="font-size: 0.9rem; color: #D2D8D5; line-height: 1.5; margin-bottom: 16px;">Bio</p>
+          <div style="font-size: 0.8rem; color: #A8ADA5; margin-bottom: 20px;">
+            <div><strong style="color: #FFF;">Education:</strong> <span id="modalTrainerEdu"></span></div>
+            <div style="margin-top: 4px;"><strong style="color: #FFF;">Experience:</strong> <span id="modalTrainerExp"></span></div>
+          </div>
+          <a href="training.html" id="modalTrainerCta" class="btn btn-primary btn-block">
+            <span>Request 1-on-1 Consultation</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB">
+            <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+          </a>
+          <p class="footer-desc">
+            A premium human performance collective engineered for progressive strength training, metabolic conditioning, and complete biological restoration.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-link" aria-label="STACKLY on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on Spotify"><i class="fa-brands fa-spotify"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Programs (all redirect to 404.html) -->
+        <div>
+          <h4 class="footer-heading">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link">Strength & Conditioning</a></li>
+            <li><a href="404.html" class="footer-link">Personal Training</a></li>
+            <li><a href="404.html" class="footer-link">Functional Fitness</a></li>
+            <li><a href="404.html" class="footer-link">HIIT & Metabolic Sprints</a></li>
+            <li><a href="404.html" class="footer-link">Yoga & Joint Mobility</a></li>
+            <li><a href="404.html" class="footer-link">Contrast Recovery Suite</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="classes.html" class="footer-link">Programs</a></li>
+            <li><a href="trainers.html" class="footer-link">Trainers</a></li>
+            <li><a href="membership.html" class="footer-link">Membership</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Club Headquarters -->
+        <div>
+          <h4 class="footer-heading">Club Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Chinna Thirupathi, Near Chinna Mariamman Kovil, Salem 636008</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+919820012345" style="color: inherit;">+91 98200 12345</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:info@stacklyfitness.com" style="color: inherit;">info@stacklyfitness.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon–Fri: 05:00–23:00<br>Sat–Sun: 06:00–21:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Bar -->
+      <div style="padding: 24px 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div style="font-family: var(--font-heading); font-weight: 700; color: #FFF; text-transform: uppercase;">The Stackly Dispatch</div>
+          <p style="font-size: 0.825rem; color: #8E9290;">Weekly research, biomechanics breakdowns, and training schedules delivered to your inbox.</p>
+        </div>
+        <form class="footer-newsletter-form" id="footerNewsletterForm" novalidate style="display: flex; flex-direction: column; max-width: 420px; width: 100%;">
+          <div style="display: flex; gap: 8px; width: 100%;">
+            <input type="email" name="email" class="form-control" placeholder="Enter your email address" style="padding: 10px 14px; font-size: 0.85rem; flex: 1;">
+            <button type="submit" class="btn btn-primary btn-sm" style="white-space: nowrap;">Subscribe</button>
+          </div>
+          <div class="newsletter-error-msg" style="color: #FF5252; font-size: 0.8rem; margin-top: 6px; display: none; font-weight: 600;"></div>
+        </form>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 STACKLY FITNESS CLUB. All Rights Reserved. Engineered for athletic excellence.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms & Conditions</a>
+          <a href="404.html">Safety Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    // Trainer search & category filtering
+    const searchInput = document.getElementById('trainerSearchInput');
+    const filterButtons = document.querySelectorAll('.trainer-filter-btn');
+    const trainerCards = document.querySelectorAll('#trainersDirectory .trainer-card');
+
+    function applyTrainerFilters() {
+      const activeFilterBtn = document.querySelector('.trainer-filter-btn.active');
+      const filter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+      const query = (searchInput?.value || '').toLowerCase().trim();
+
+      trainerCards.forEach(card => {
+        const spec = card.getAttribute('data-specialty');
+        const name = card.querySelector('.trainer-name')?.textContent.toLowerCase() || '';
+        const bio = card.querySelector('.trainer-bio')?.textContent.toLowerCase() || '';
+
+        const matchesSpec = (filter === 'all' || spec === filter);
+        const matchesQuery = (query === '' || name.includes(query) || bio.includes(query));
+
+        if (matchesSpec && matchesQuery) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', function() {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyTrainerFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', applyTrainerFilters);
+    }
+
+    // Modal popup on card click
+    trainerCards.forEach(card => {
+      const name = card.querySelector('.trainer-name')?.textContent || '';
+      const cred = card.querySelector('.trainer-cred-badge')?.textContent || '';
+      const spec = card.querySelector('.trainer-specialty')?.textContent || '';
+      const bio = card.querySelector('.trainer-bio')?.textContent || '';
+      const imgSrc = card.querySelector('.trainer-photo-wrap img')?.src || '';
+
+      const detailBtn = document.createElement('button');
+      detailBtn.type = 'button';
+      detailBtn.className = 'btn btn-ghost btn-sm';
+      detailBtn.style.marginTop = '6px';
+      detailBtn.style.width = '100%';
+      detailBtn.innerHTML = '<i class="fa-solid fa-id-card"></i> View Full Bio';
+      detailBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('modalTrainerName').textContent = name;
+        document.getElementById('modalTrainerCred').textContent = cred;
+        document.getElementById('modalTrainerSpec').textContent = spec;
+        document.getElementById('modalTrainerBio').textContent = bio;
+        document.getElementById('modalTrainerImg').src = imgSrc;
+        document.getElementById('modalTrainerEdu').textContent = card.querySelector('.fa-graduation-cap')?.parentElement?.textContent.trim() || 'Accredited Sports Science';
+        document.getElementById('modalTrainerExp').textContent = 'Verified Coach at Pulse Athletic Club';
+        document.getElementById('modalTrainerCta').href = 'training.html?coach=' + encodeURIComponent(name);
+
+        window.PulseApp.openModal('trainerDetailModal');
+      });
+
+      card.querySelector('.trainer-footer')?.appendChild(detailBtn);
+    });
+  </script>
+</body>
+</html>

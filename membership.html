@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Plans — STACKLY FITNESS CLUB</title>
+  <meta name="description" content="Explore membership tiers at Stackly Fitness Club. Flexible monthly & annual plans with full access to lifting platforms, group classes, and recovery suites.">
+  <meta property="og:title" content="Membership Plans — STACKLY FITNESS CLUB">
+  <meta property="og:description" content="Invest in your human potential. Compare Essential, Performance, and Elite membership plans.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B0D0C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D0C'/%3E%3Cpath d='M4 16h6l3-8 6 16 3-8h6' stroke='%23C6FF00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB Homepage">
+        <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        
+        <div class="nav-item-dropdown">
+          <a href="classes.html" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Programs <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="classes.html#group-classes" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Group Classes <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">HIIT, Hyrox, mobility & strength camps</span>
+            </a>
+            <a href="classes.html#personal-training" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Personal Training <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">1-on-1 coaching & tailored biomechanics</span>
+            </a>
+            <a href="classes.html#facilities-recovery" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Facilities & Recovery <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">Hydrotherapy, saunas & open turf zones</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="trainers.html" class="nav-link">Trainers</a>
+        <a href="membership.html" class="nav-link active">Membership</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link">
+          <i class="fa-regular fa-user"></i>
+          <span>Member Login</span>
+        </a>
+        <a href="#inquiryFormAnchor" class="btn btn-primary btn-sm">Join Now</a>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+    <!-- Mobile Drawer & Overlay -->
+  <div class="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY HOME">
+        <img src="logo.webp" alt="STACKLY" class="brand-logo-img">
+      </a>
+      <button type="button" class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="classes.html" class="mobile-nav-link">Programs</a>
+      <a href="trainers.html" class="mobile-nav-link">Trainers</a>
+      <a href="membership.html" class="mobile-nav-link active">Membership Plans</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="login.html" class="mobile-nav-link mobile-nav-link-auth">
+        <i class="fa-solid fa-right-to-bracket"></i> Member Sign In
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-current" aria-current="page">Membership Plans</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="eyebrow">Tiered Access</span>
+        <h1 class="page-hero-title">INVEST IN YOUR <span class="text-accent">POTENTIAL</span>.</h1>
+        <p class="page-hero-subtitle">
+          Transparent, all-inclusive memberships with zero hidden registration fees, complimentary orientation, and full access to our athletic amenities.
+        </p>
+
+        <!-- 3-Way Billing Switcher: Monthly, Quarterly, Annual -->
+        <div class="billing-pills-nav" role="tablist" aria-label="Billing Frequency" style="margin-top: 32px;">
+          <button type="button" class="billing-pill-btn active" data-period="monthly">
+            Monthly
+          </button>
+          <button type="button" class="billing-pill-btn" data-period="quarterly">
+            Quarterly <span class="badge badge-lime" style="font-size: 0.65rem;">Save 10%</span>
+          </button>
+          <button type="button" class="billing-pill-btn" data-period="annual">
+            Annual <span class="badge badge-lime" style="font-size: 0.65rem;">Save 20%</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Athletic Kinetic Ticker Ribbon -->
+  <div class="athletic-marquee-wrap" aria-hidden="true">
+    <div class="athletic-marquee-track">
+      <div class="athletic-marquee-item"><i class="fa-solid fa-tag item-accent"></i> <span>ZERO ENROLLMENT FEES</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-lock-open item-accent"></i> <span>CANCEL ANYTIME WITHOUT PENALTY</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-snowflake item-accent"></i> <span>ALL-INCLUSIVE COLD PLUNGE ACCESS</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-mobile-screen-button item-accent"></i> <span>MEMBER APP INCLUDED</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-tag item-accent"></i> <span>ZERO ENROLLMENT FEES</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-lock-open item-accent"></i> <span>CANCEL ANYTIME WITHOUT PENALTY</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-snowflake item-accent"></i> <span>ALL-INCLUSIVE COLD PLUNGE ACCESS</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-mobile-screen-button item-accent"></i> <span>MEMBER APP INCLUDED</span> <span class="item-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- Pricing Cards Section -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="pricing-grid">
+        <!-- Essential Plan -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-plan-name">Essential</h3>
+            <p class="pricing-plan-desc">For dedicated lifters and self-directed athletes.</p>
+            <div class="pricing-amount-wrap">
+              <span class="pricing-currency">₹</span>
+              <span class="pricing-amount" id="priceEssential">2,499</span>
+              <span class="pricing-period">/ month</span>
+            </div>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Full gym floor & platform access</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Keyless locker rooms & towel service</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Stackly Member Mobile App access</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>1 Initial fitness consultation</span></li>
+            <li class="pricing-feature-item excluded"><i class="fa-solid fa-xmark"></i> <span>Unlimited Group Classes</span></li>
+            <li class="pricing-feature-item excluded"><i class="fa-solid fa-xmark"></i> <span>Contrast Hydrotherapy & Cold Plunge</span></li>
+            <li class="pricing-feature-item excluded"><i class="fa-solid fa-xmark"></i> <span>Complimentary Guest Passes</span></li>
+          </ul>
+
+          <div>
+            <a href="#inquiryFormAnchor" class="btn btn-secondary btn-block plan-select-btn" data-plan="Essential Plan">
+              Select Essential
+            </a>
+            <div class="pricing-demo-note">(Configurable Demo Price in INR)</div>
+          </div>
+        </div>
+
+        <!-- Performance Plan (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-featured-badge">MOST POPULAR</div>
+          <div class="pricing-header">
+            <h3 class="pricing-plan-name text-accent">Performance</h3>
+            <p class="pricing-plan-desc">The complete athletic conditioning and recovery experience.</p>
+            <div class="pricing-amount-wrap">
+              <span class="pricing-currency">₹</span>
+              <span class="pricing-amount" id="pricePerformance">4,499</span>
+              <span class="pricing-period">/ month</span>
+            </div>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Everything in Essential plan</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Unlimited Group & HIIT Classes</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Contrast Hydrotherapy & Cold Plunge</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Monthly InBody 770 Scan</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>2 Free Guest Passes / mo</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>1 Free Personal Training Session</span></li>
+            <li class="pricing-feature-item excluded"><i class="fa-solid fa-xmark"></i> <span>Private Locker & Laundry Valet</span></li>
+          </ul>
+
+          <div>
+            <a href="#inquiryFormAnchor" class="btn btn-primary btn-block plan-select-btn" data-plan="Performance Plan">
+              Select Performance
+            </a>
+            <div class="pricing-demo-note">(Configurable Demo Price in INR)</div>
+          </div>
+        </div>
+
+        <!-- Elite Plan -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-plan-name">Elite</h3>
+            <p class="pricing-plan-desc">VIP coaching, unlimited recovery, and executive luxury perks.</p>
+            <div class="pricing-amount-wrap">
+              <span class="pricing-currency">₹</span>
+              <span class="pricing-amount" id="priceElite">7,999</span>
+              <span class="pricing-period">/ month</span>
+            </div>
+          </div>
+
+          <ul class="pricing-features-list">
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Everything in Performance plan</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>4 Monthly 1-on-1 PT Sessions</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Personalized Bi-Weekly Nutrition</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Private Reserved Locker & Laundry</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Unlimited Guest Passes</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Complimentary Protein Shake / visit</span></li>
+            <li class="pricing-feature-item included"><i class="fa-solid fa-check"></i> <span>Priority Class Bookings (48h advance)</span></li>
+          </ul>
+
+          <div>
+            <a href="#inquiryFormAnchor" class="btn btn-secondary btn-block plan-select-btn" data-plan="Elite Plan">
+              Select Elite
+            </a>
+            <div class="pricing-demo-note">(Configurable Demo Price in INR)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Clear Cancellation Terms & Membership Guidelines -->
+      <div style="margin-top: 48px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;" class="why-us-pillars">
+        <div class="card" style="padding: 24px;">
+          <i class="fa-solid fa-calendar-xmark text-accent" style="font-size: 1.3rem; margin-bottom: 10px;"></i>
+          <h4 style="font-size: 1rem; color: #FFF; margin-bottom: 8px;">Zero Hidden Cancellation Fees</h4>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Cancel your recurring membership at any time with 14 days written notice prior to your next billing cycle. Zero exit penalties or fine-print traps.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 24px;">
+          <i class="fa-solid fa-pause text-accent" style="font-size: 1.3rem; margin-bottom: 10px;"></i>
+          <h4 style="font-size: 1rem; color: #FFF; margin-bottom: 8px;">60-Day Annual Freeze</h4>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Traveling or recovering? Pause your active membership for up to 60 calendar days per year in minimum increments of 14 days at zero surcharge.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 24px;">
+          <i class="fa-solid fa-receipt text-accent" style="font-size: 1.3rem; margin-bottom: 10px;"></i>
+          <h4 style="font-size: 1rem; color: #FFF; margin-bottom: 8px;">Transparent Pricing</h4>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Pricing displayed is all-inclusive of lockers, towel valet, and baseline movement screening. No unadvertised enrollment taxes or towel charges.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Feature Comparison Table -->
+  <section class="section section-surface" aria-label="Feature Comparison Table">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Direct Comparison</span>
+        <h2>TIER FEATURE BREAKDOWN.</h2>
+        <p class="lead">Compare all privileges across every membership tier with full transparency.</p>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comparison-table" aria-label="Membership Comparison Matrix">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 40%;">Membership Features</th>
+              <th scope="col">Essential</th>
+              <th scope="col" class="featured-col">Performance (Recommended)</th>
+              <th scope="col">Elite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Category: Training Floor Access -->
+            <tr class="table-category-row">
+              <td colspan="4">Training Floor & Facility Access</td>
+            </tr>
+            <tr>
+              <td>Olympic Lifting Platforms & Eleiko Bars</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Included</td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Included</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Included</td>
+            </tr>
+            <tr>
+              <td>Cardio Deck & Woodway Curved Runners</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Included</td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Included</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Included</td>
+            </tr>
+            <tr>
+              <td>40-Meter Sprint Turf & Prowler Sleds</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Included</td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Included</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Included</td>
+            </tr>
+            <tr>
+              <td>Operating Hours Access (5am - 11pm)</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Full Access</td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Full Access</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Full Access</td>
+            </tr>
+
+            <!-- Category: Group Classes -->
+            <tr class="table-category-row">
+              <td colspan="4">Group Classes & Timetable</td>
+            </tr>
+            <tr>
+              <td>HYROX Athletic Conditioning Classes</td>
+              <td><span class="text-muted">₹500 / drop-in</span></td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+            </tr>
+            <tr>
+              <td>Combat, Boxing & Sparring Sessions</td>
+              <td><span class="text-muted">₹500 / drop-in</span></td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+            </tr>
+            <tr>
+              <td>Dynamic Yoga & Mobility Restoration</td>
+              <td><span class="text-muted">₹500 / drop-in</span></td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+            </tr>
+            <tr>
+              <td>Priority Booking Window</td>
+              <td>24 Hours</td>
+              <td class="featured-col">48 Hours</td>
+              <td>7 Days</td>
+            </tr>
+
+            <!-- Category: Recovery & Amenities -->
+            <tr class="table-category-row">
+              <td colspan="4">Recovery & Hydrotherapy</td>
+            </tr>
+            <tr>
+              <td>4°C Cold Plunge Contrast Tubs</td>
+              <td><span class="text-muted">—</span></td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+            </tr>
+            <tr>
+              <td>90°C Finnish Dry Heat Sauna</td>
+              <td><span class="text-muted">—</span></td>
+              <td class="featured-col"><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+              <td><i class="fa-solid fa-check text-accent"></i> Unlimited</td>
+            </tr>
+            <tr>
+              <td>Normatec Dynamic Compression Boots</td>
+              <td><span class="text-muted">—</span></td>
+              <td class="featured-col"><span class="text-muted">Discounted</span></td>
+              <td><i class="fa-solid fa-check text-accent"></i> Complimentary</td>
+            </tr>
+
+            <!-- Category: Coaching & Tech -->
+            <tr class="table-category-row">
+              <td colspan="4">Coaching & Biometric Diagnostics</td>
+            </tr>
+            <tr>
+              <td>InBody 770 Composition Scan</td>
+              <td>1 Initial Scan</td>
+              <td class="featured-col">Monthly Scan</td>
+              <td>Bi-Weekly + Review</td>
+            </tr>
+            <tr>
+              <td>1-on-1 Personal Training Included</td>
+              <td><span class="text-muted">—</span></td>
+              <td class="featured-col">1 Session Initial</td>
+              <td><strong>4 Sessions / month</strong></td>
+            </tr>
+            <tr>
+              <td>Nutritional Macro Blueprint</td>
+              <td><span class="text-muted">—</span></td>
+              <td class="featured-col">Starter Guide</td>
+              <td>Personalized Weekly</td>
+            </tr>
+            <tr>
+              <td>Dedicated Permanent Locker & Laundry Valet</td>
+              <td><span class="text-muted">—</span></td>
+              <td class="featured-col"><span class="text-muted">—</span></td>
+              <td><i class="fa-solid fa-check text-accent"></i> Included</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Membership Frequently Asked Questions -->
+      <div style="margin-top: 56px;" class="container-narrow">
+        <div class="section-header text-center" style="margin-bottom: 32px;">
+          <span class="eyebrow">Membership FAQs</span>
+          <h3 style="font-size: 1.6rem;">COMMONLY ASKED QUESTIONS.</h3>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">How does the 60-day freeze policy work?</span>
+              <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="accordion-content">
+              <p>All active Performance and Elite annual/quarterly members are entitled to up to 60 calendar days of complimentary freeze per calendar year. Freezes can be activated via your member dashboard with 48 hours advance notice in blocks of at least 14 days.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">Can I upgrade or downgrade my tier mid-cycle?</span>
+              <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="accordion-content">
+              <p>Yes. Upgrades take effect immediately with a prorated charge for the remaining billing days. Downgrades take effect at the conclusion of your current billing period with zero transition fees.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">Are guest passes transferable to friends and family?</span>
+              <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="accordion-content">
+              <p>Yes. Guest passes included in Performance (2/mo) and Elite (Unlimited) tiers can be redeemed for any first-time visitor accompanying you. Guests enjoy full access to the training floor and contrast hydrotherapy suites on that day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Membership Inquiry Form -->
+  <section class="section section-dark" id="inquiryFormAnchor" aria-label="Membership Inquiry Application">
+    <div class="container container-narrow">
+      <div class="contact-form-panel">
+        <span class="eyebrow">Get Started</span>
+        <h2 style="margin-bottom: 12px;">JOIN STACKLY FITNESS CLUB.</h2>
+        <p class="lead" style="margin-bottom: 32px;">
+          Submit your membership reservation inquiry. Our admissions team will confirm your baseline consultation date.
+        </p>
+
+        <form id="membershipInquiryForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="inquiryPlanSelect">Selected Tier <span class="required">*</span></label>
+            <select id="inquiryPlanSelect" class="form-control" required>
+              <option value="Essential Plan">Essential Plan (₹2,499 / mo)</option>
+              <option value="Performance Plan" selected>Performance Plan (₹4,499 / mo) — Recommended</option>
+              <option value="Elite Plan">Elite Plan (₹7,999 / mo)</option>
+            </select>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label" for="inquiryName">Full Name <span class="required">*</span></label>
+              <input type="text" id="inquiryName" class="form-control" placeholder="Alex Vance" required>
+              <div class="form-feedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inquiryEmail">Email Address <span class="required">*</span></label>
+              <input type="email" id="inquiryEmail" class="form-control" placeholder="alex@domain.com" required>
+              <div class="form-feedback"></div>
+            </div>
+          </div>
+
+          <div class="form-row-2col">
+            <div class="form-group">
+              <label class="form-label" for="inquiryPhone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="inquiryPhone" class="form-control" placeholder="+91 98200 00000" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inquiryStartDate">Anticipated Start Date</label>
+              <input type="date" id="inquiryStartDate" class="form-control">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="inquiryGoals">Primary Training Goal</label>
+            <select id="inquiryGoals" class="form-control">
+              <option value="strength">Heavy Strength & Powerlifting</option>
+              <option value="conditioning">Metabolic Conditioning & HYROX</option>
+              <option value="hypertrophy">Muscle Hypertrophy & Physique</option>
+              <option value="longevity">Joint Health & Longevity</option>
+            </select>
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="inquiryConsent" required checked>
+            <label class="form-check-label" for="inquiryConsent">
+              I agree to the terms of service and consent to receiving club onboarding communications.
+            </label>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              <span>Submit Membership Application</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+
+          <p style="font-size: 0.75rem; color: #6E7572; text-align: center; margin-top: 14px;">
+            No payment taken online. Pricing shown is demo configurable pricing in INR. All payments finalized upon physical orientation.
+          </p>
+        </form>
+      </div>
+
+      <!-- Membership Frequently Asked Questions -->
+      <div style="margin-top: 56px;" class="container-narrow">
+        <div class="section-header text-center" style="margin-bottom: 32px;">
+          <span class="eyebrow">Membership FAQs</span>
+          <h3 style="font-size: 1.6rem;">COMMONLY ASKED QUESTIONS.</h3>
+        </div>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">How does the 60-day freeze policy work?</span>
+              <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="accordion-content">
+              <p>All active Performance and Elite annual/quarterly members are entitled to up to 60 calendar days of complimentary freeze per calendar year. Freezes can be activated via your member dashboard with 48 hours advance notice in blocks of at least 14 days.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">Can I upgrade or downgrade my tier mid-cycle?</span>
+              <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="accordion-content">
+              <p>Yes. Upgrades take effect immediately with a prorated charge for the remaining billing days. Downgrades take effect at the conclusion of your current billing period with zero transition fees.</p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-title">Are guest passes transferable to friends and family?</span>
+              <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+            </button>
+            <div class="accordion-content">
+              <p>Yes. Guest passes included in Performance (2/mo) and Elite (Unlimited) tiers can be redeemed for any first-time visitor accompanying you. Guests enjoy full access to the training floor and contrast hydrotherapy suites on that day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB">
+            <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+          </a>
+          <p class="footer-desc">
+            A premium human performance collective engineered for progressive strength training, metabolic conditioning, and complete biological restoration.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-link" aria-label="STACKLY on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on Spotify"><i class="fa-brands fa-spotify"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Programs (all redirect to 404.html) -->
+        <div>
+          <h4 class="footer-heading">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link">Strength & Conditioning</a></li>
+            <li><a href="404.html" class="footer-link">Personal Training</a></li>
+            <li><a href="404.html" class="footer-link">Functional Fitness</a></li>
+            <li><a href="404.html" class="footer-link">HIIT & Metabolic Sprints</a></li>
+            <li><a href="404.html" class="footer-link">Yoga & Joint Mobility</a></li>
+            <li><a href="404.html" class="footer-link">Contrast Recovery Suite</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="classes.html" class="footer-link">Programs</a></li>
+            <li><a href="trainers.html" class="footer-link">Trainers</a></li>
+            <li><a href="membership.html" class="footer-link">Membership</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Club Headquarters -->
+        <div>
+          <h4 class="footer-heading">Club Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Chinna Thirupathi, Near Chinna Mariamman Kovil, Salem 636008</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+919820012345" style="color: inherit;">+91 98200 12345</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:info@stacklyfitness.com" style="color: inherit;">info@stacklyfitness.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon–Fri: 05:00–23:00<br>Sat–Sun: 06:00–21:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Bar -->
+      <div style="padding: 24px 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div style="font-family: var(--font-heading); font-weight: 700; color: #FFF; text-transform: uppercase;">The Stackly Dispatch</div>
+          <p style="font-size: 0.825rem; color: #8E9290;">Weekly research, biomechanics breakdowns, and training schedules delivered to your inbox.</p>
+        </div>
+        <form class="footer-newsletter-form" id="footerNewsletterForm" novalidate style="display: flex; flex-direction: column; max-width: 420px; width: 100%;">
+          <div style="display: flex; gap: 8px; width: 100%;">
+            <input type="email" name="email" class="form-control" placeholder="Enter your email address" style="padding: 10px 14px; font-size: 0.85rem; flex: 1;">
+            <button type="submit" class="btn btn-primary btn-sm" style="white-space: nowrap;">Subscribe</button>
+          </div>
+          <div class="newsletter-error-msg" style="color: #FF5252; font-size: 0.8rem; margin-top: 6px; display: none; font-weight: 600;"></div>
+        </form>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 STACKLY FITNESS CLUB. All Rights Reserved. Engineered for athletic excellence.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms & Conditions</a>
+          <a href="404.html">Safety Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+  <script>
+    // Handle inline plan select buttons
+    document.querySelectorAll('.plan-select-btn').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const planName = btn.getAttribute('data-plan');
+        const planSelect = document.getElementById('inquiryPlanSelect');
+        if (planSelect && planName) {
+          for (let i = 0; i < planSelect.options.length; i++) {
+            if (planSelect.options[i].text.includes(planName.split(' ')[0])) {
+              planSelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Dashboard — STACKLY FITNESS CLUB</title>
+  <meta name="description" content="Manage your training schedule, view booked sessions, track weekly workout consistency, and upgrade your membership at Stackly Fitness Club.">
+  <meta name="theme-color" content="#0B0D0C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D0C'/%3E%3Cpath d='M4 16h6l3-8 6 16 3-8h6' stroke='%23C7FF3D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body class="dashboard-layout">
+
+  <!-- Mobile Sidebar Overlay -->
+  <div class="dash-sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       Dashboard Sidebar Navigation
+       ========================================================================= -->
+  <aside class="dash-sidebar" aria-label="Member Navigation">
+    <div>
+      <div class="dash-brand">
+        <a href="index.html" class="brand-logo" aria-label="Back to Public Homepage">
+          <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+        </a>
+        <div style="font-size: 0.7rem; color: var(--color-accent); font-family: var(--font-heading); letter-spacing: 0.1em; margin-top: 6px; text-transform: uppercase;">
+          // ATHLETE PORTAL
+        </div>
+      </div>
+
+      <nav class="dash-nav-list" role="tablist">
+        <button class="dash-nav-item active" data-tab="overview" role="tab" aria-selected="true">
+          <i class="fa-solid fa-gauge-high"></i>
+          <span>Dashboard</span>
+        </button>
+        <button class="dash-nav-item" data-tab="membership" role="tab" aria-selected="false">
+          <i class="fa-solid fa-id-card"></i>
+          <span>My Membership</span>
+        </button>
+        <button class="dash-nav-item" data-tab="workout-plans" role="tab" aria-selected="false">
+          <i class="fa-solid fa-list-check"></i>
+          <span>Workout Plans</span>
+        </button>
+        <button class="dash-nav-item" data-tab="class-schedule" role="tab" aria-selected="false">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>Class Schedule</span>
+        </button>
+        <button class="dash-nav-item" data-tab="bookings" role="tab" aria-selected="false">
+          <i class="fa-solid fa-ticket"></i>
+          <span>Bookings</span>
+        </button>
+        <button class="dash-nav-item" data-tab="profile" role="tab" aria-selected="false">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Profile</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Sidebar Bottom / User Card -->
+    <div class="dash-sidebar-footer">
+      <div class="dash-user-card">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Member Avatar" class="dash-user-avatar">
+        <div class="dash-user-meta">
+          <div class="dash-user-name">Alex Vance</div>
+          <div class="dash-user-badge">Performance Tier</div>
+        </div>
+      </div>
+      <button class="btn btn-secondary btn-sm btn-block dash-logout-btn">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       Dashboard Main View Area
+       ========================================================================= -->
+  <main class="dash-main" role="main">
+    <!-- Top Action Bar -->
+    <div class="dash-header">
+      <!-- Top Row: Search Bar, Bell Icon, Profile Avatar & Name -->
+      <div class="dash-header-top">
+        <div class="dash-header-left">
+          <button class="mobile-dash-nav-toggle" aria-label="Toggle Dashboard Menu">
+            <i class="fa-solid fa-bars"></i> <span>Menu</span>
+          </button>
+          <form class="dash-header-search" id="dashSearchForm" novalidate>
+            <input type="text" id="dashSearchInput" class="dash-search-input" placeholder="Search workouts, classes, records...">
+            <button type="submit" class="dash-search-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+
+        <div class="dash-header-right">
+          <a href="404.html" class="dash-bell-btn" id="dashBellBtn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="dash-bell-badge"></span>
+          </a>
+          <div class="dash-header-profile">
+            <div class="dash-header-avatar"><i class="fa-solid fa-circle-user"></i></div>
+            <div class="dash-header-user-meta">
+              <span class="dash-header-profile-name" id="headerProfileName">Alex Vance</span>
+              <span class="dash-header-profile-role" id="headerProfileRole">Member</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Welcome Title & Quick Actions -->
+      <div class="dash-header-bottom">
+        <div>
+          <h1 class="dash-welcome-title">
+            WELCOME BACK, <span class="text-accent" id="welcomeUserName">ALEX</span>.
+          </h1>
+          <p style="font-size: 0.875rem; color: #A8ADA5;">
+            Training Day // Thursday, October 29 &bull; <span class="badge badge-outline-lime" id="welcomeUserTier">PERFORMANCE TIER</span>
+          </p>
+        </div>
+
+        <div class="dash-header-actions">
+          <a href="404.html" class="btn btn-secondary btn-sm">
+            <i class="fa-solid fa-plus"></i> Book Class
+          </a>
+          <a href="404.html" class="btn btn-primary btn-sm" id="btnLogWorkout">
+            <i class="fa-solid fa-dumbbell"></i> Log Workout
+          </a>
+          <a href="index.html" class="btn btn-ghost btn-sm" title="Exit to Public Site">
+            <i class="fa-solid fa-globe"></i> Website
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 1: Overview (Default)
+         ======================================================================= -->
+    <div class="dash-tab-pane active" id="tab-overview">
+      <!-- 4 Core Metric Cards -->
+      <div class="dash-stats-grid">
+        <!-- Metric 1: Membership Status -->
+        <div class="dash-stat-card">
+          <div class="dash-stat-header">
+            <span class="dash-stat-title">Membership Status</span>
+            <i class="fa-solid fa-shield-check dash-stat-icon"></i>
+          </div>
+          <div class="dash-stat-value" style="font-size: 1.5rem; color: var(--color-accent);">ACTIVE</div>
+          <div style="font-size: 0.775rem; color: #A8ADA5;">
+            Performance Tier &bull; Renews Nov 28
+          </div>
+        </div>
+
+        <!-- Metric 2: Next Class -->
+        <div class="dash-stat-card" style="border-color: var(--color-border-accent); background: #181E1B;">
+          <div class="dash-stat-header">
+            <span class="dash-stat-title" style="color: var(--color-accent);">Next Class Today</span>
+            <i class="fa-regular fa-clock text-accent"></i>
+          </div>
+          <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: #FFF; margin-bottom: 4px;">
+            HYROX Conditioning
+          </div>
+          <div style="font-size: 0.8rem; color: #D2D8D5;">
+            18:30 &bull; Coach Marcus &bull; Turf Track
+          </div>
+        </div>
+
+        <!-- Metric 3: Workout Progress -->
+        <div class="dash-stat-card">
+          <div class="dash-stat-header">
+            <span class="dash-stat-title">Workouts This Month</span>
+            <i class="fa-solid fa-dumbbell dash-stat-icon"></i>
+          </div>
+          <div class="dash-stat-value" id="dashWorkoutsCount">16</div>
+          <div class="dash-stat-trend">
+            <i class="fa-solid fa-arrow-up"></i> <span>+3 sessions vs last month</span>
+          </div>
+        </div>
+
+        <!-- Metric 4: Weekly Consistency -->
+        <div class="dash-stat-card">
+          <div class="dash-stat-header">
+            <span class="dash-stat-title">Weekly Consistency</span>
+            <i class="fa-solid fa-fire dash-stat-icon"></i>
+          </div>
+          <div class="dash-stat-value">4 / 4</div>
+          <div class="dash-stat-trend">
+            <i class="fa-solid fa-check"></i> <span>Weekly target on track</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two-Column Grid: Weekly Chart & Booked Classes -->
+      <div class="dash-content-grid">
+        <!-- Panel 1: Activity Chart -->
+        <div class="dash-panel">
+          <div class="dash-panel-header">
+            <h3 class="dash-panel-title">
+              <i class="fa-solid fa-chart-column"></i> Weekly Volume Distribution
+            </h3>
+            <span class="badge badge-outline">Past 7 Days</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #A8ADA5; margin-bottom: 16px;">
+            Daily training load intensity measured against heart rate and lifted barbell tonnage.
+          </p>
+
+          <!-- SVG/CSS Activity Bars -->
+          <div class="dash-chart-container">
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 75%;"></div></div>
+              <span class="chart-bar-label">Mon</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 90%;"></div></div>
+              <span class="chart-bar-label">Tue</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 30%;"></div></div>
+              <span class="chart-bar-label">Wed</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 85%;"></div></div>
+              <span class="chart-bar-label" style="color: var(--color-accent); font-weight: 800;">Thu</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 60%;"></div></div>
+              <span class="chart-bar-label">Fri</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 95%;"></div></div>
+              <span class="chart-bar-label">Sat</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 20%;"></div></div>
+              <span class="chart-bar-label">Sun</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Scheduled Bookings Preview -->
+        <div class="dash-panel">
+          <div class="dash-panel-header">
+            <h3 class="dash-panel-title">
+              <i class="fa-solid fa-ticket"></i> Upcoming Reservations
+            </h3>
+          </div>
+
+          <!-- Active Sessions Container -->
+          <div id="dashBookingsContainer" class="booked-sessions-list">
+            <div class="booked-session-item">
+              <div class="session-badge-date">
+                <div class="session-day">29</div>
+                <div class="session-month">OCT</div>
+              </div>
+              <div class="session-details">
+                <div class="session-title">HYROX Conditioning</div>
+                <div class="session-meta">
+                  <span><i class="fa-regular fa-clock"></i> 18:30</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Turf Track</span>
+                  <span>Coach Marcus</span>
+                </div>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm" title="Cancel Booking">
+                <i class="fa-solid fa-xmark" style="color: var(--color-error);"></i>
+              </a>
+            </div>
+
+            <div class="booked-session-item">
+              <div class="session-badge-date">
+                <div class="session-day">31</div>
+                <div class="session-month">OCT</div>
+              </div>
+              <div class="session-details">
+                <div class="session-title">Olympic Snatch Workshop</div>
+                <div class="session-meta">
+                  <span><i class="fa-regular fa-clock"></i> 10:00</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Platform 4</span>
+                  <span>Coach Dmitri</span>
+                </div>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm" title="Cancel Booking">
+                <i class="fa-solid fa-xmark" style="color: var(--color-error);"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Demo Empty State (Toggled dynamically) -->
+          <div id="dashEmptyState" class="empty-state-card" style="display: none; padding: 32px 16px;">
+            <div class="empty-state-icon"><i class="fa-regular fa-calendar-xmark"></i></div>
+            <h4 class="empty-state-title">No Booked Sessions</h4>
+            <p class="empty-state-desc">You do not currently have any upcoming class reservations. Browse the weekly timetable to lock in your next coached session.</p>
+            <a href="404.html" class="btn btn-primary btn-sm">Explore Class Schedule</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 2: My Membership
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-membership">
+      <div class="dash-panel" style="margin-bottom: 24px;">
+        <div class="dash-panel-header">
+          <h3 class="dash-panel-title"><i class="fa-solid fa-shield-halved"></i> Active Membership Details</h3>
+          <a href="404.html" class="btn btn-primary btn-sm">Change / Upgrade Tier</a>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding: 24px; background-color: #171E1B; border: 1.5px solid var(--color-accent); border-radius: var(--radius-xs);">
+          <div>
+            <span class="badge badge-lime" style="margin-bottom: 6px;">CURRENT TIER</span>
+            <h2 style="font-size: 1.8rem; color: #FFF; margin-bottom: 4px;">PERFORMANCE MEMBERSHIP</h2>
+            <p style="font-size: 0.85rem; color: #A8ADA5;">
+              Billing Cycle: Monthly &bull; Fee: ₹4,499 / mo &bull; Member Since: March 2025
+            </p>
+          </div>
+          <div>
+            <div style="font-size: 0.775rem; color: var(--color-accent); text-transform: uppercase; font-weight: 700;">Expiry / Renewal Date</div>
+            <div style="font-size: 1.25rem; color: #FFF; font-weight: 800;">NOVEMBER 28, 2026</div>
+            <div style="font-size: 0.75rem; color: #00E676; margin-top: 2px;"><i class="fa-solid fa-circle-check"></i> Auto-Renew Active</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 32px;">
+          <h4 style="font-size: 1rem; margin-bottom: 16px;">Included Facilities & Perks:</h4>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;" class="why-us-pillars">
+            <div class="pillar-item">
+              <i class="fa-solid fa-check text-accent"></i>
+              <div>
+                <strong>Unlimited Coached Group Classes</strong>
+                <p style="font-size: 0.8rem; color: #A8ADA5;">Access all HYROX, Barbell, and Boxing sessions.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-check text-accent"></i>
+              <div>
+                <strong>Contrast Hydrotherapy & Cold Plunge</strong>
+                <p style="font-size: 0.8rem; color: #A8ADA5;">Unlimited 4°C plunge tubs and cedar sauna access.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-check text-accent"></i>
+              <div>
+                <strong>Monthly InBody 770 Scan</strong>
+                <p style="font-size: 0.8rem; color: #A8ADA5;">Bi-weekly skeletal muscle and fat mass analytics.</p>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-check text-accent"></i>
+              <div>
+                <strong>2 Monthly Guest Passes</strong>
+                <p style="font-size: 0.8rem; color: #A8ADA5;">Bring training partners for complimentary 1-day access.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 3: Workout Plans (Periodized Splits)
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-workout-plans">
+      <div class="dash-panel" style="margin-bottom: 24px;">
+        <div class="dash-panel-header">
+          <div>
+            <h3 class="dash-panel-title"><i class="fa-solid fa-list-check"></i> Assigned Periodized Training Routine</h3>
+            <p style="font-size: 0.85rem; color: #A8ADA5; margin-top: 4px;">Program: 4-Day Athletic Hypertrophy & Engine &bull; Assigned by Coach Marcus</p>
+          </div>
+          <a href="404.html" class="btn btn-secondary btn-sm" id="btnRequestRoutineUpdate">Request Plan Revision</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;" class="why-us-pillars">
+          <!-- Day 1: Push & Power -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-lime">Day 01</span>
+              <span style="font-size: 0.8rem; color: #A8ADA5;">Upper Body Push</span>
+            </div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 14px;">Overhead Press & Barbell Bench</h4>
+            <ul style="font-size: 0.85rem; color: #D2D8D5; display: flex; flex-direction: column; gap: 8px;">
+              <li>&bull; <strong>Barbell Bench Press:</strong> 4 sets &times; 6 reps (RPE 8)</li>
+              <li>&bull; <strong>Standing Overhead Press:</strong> 3 sets &times; 8 reps</li>
+              <li>&bull; <strong>Incline Dumbbell Flye:</strong> 3 sets &times; 12 reps</li>
+              <li>&bull; <strong>Weighted Dips:</strong> 3 sets &times; 10 reps</li>
+            </ul>
+          </div>
+
+          <!-- Day 2: Pull & Posterior Chain -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-lime">Day 02</span>
+              <span style="font-size: 0.8rem; color: #A8ADA5;">Upper Body Pull</span>
+            </div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 14px;">Deadlift & Weighted Chins</h4>
+            <ul style="font-size: 0.85rem; color: #D2D8D5; display: flex; flex-direction: column; gap: 8px;">
+              <li>&bull; <strong>Conventional Deadlift:</strong> 4 sets &times; 5 reps (RPE 8.5)</li>
+              <li>&bull; <strong>Weighted Pull-Ups:</strong> 4 sets &times; 6 reps</li>
+              <li>&bull; <strong>Chest-Supported T-Bar Row:</strong> 3 sets &times; 10 reps</li>
+              <li>&bull; <strong>Face Pulls & Rear Delts:</strong> 3 sets &times; 15 reps</li>
+            </ul>
+          </div>
+
+          <!-- Day 3: Lower Body Squat Mechanics -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-lime">Day 03</span>
+              <span style="font-size: 0.8rem; color: #A8ADA5;">Lower Body Power</span>
+            </div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 14px;">Barbell Squat & Sled Sprints</h4>
+            <ul style="font-size: 0.85rem; color: #D2D8D5; display: flex; flex-direction: column; gap: 8px;">
+              <li>&bull; <strong>Barbell Back Squat:</strong> 5 sets &times; 5 reps (RPE 8)</li>
+              <li>&bull; <strong>Romanian Deadlifts:</strong> 3 sets &times; 8 reps</li>
+              <li>&bull; <strong>Bulgarian Split Squats:</strong> 3 sets &times; 10 reps/side</li>
+              <li>&bull; <strong>Heavy Prowler Sled Push:</strong> 6 lengths &times; 40m</li>
+            </ul>
+          </div>
+
+          <!-- Day 4: Aerobic Engine & Recovery -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-lime">Day 04</span>
+              <span style="font-size: 0.8rem; color: #A8ADA5;">Metabolic Conditioning</span>
+            </div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 14px;">HYROX Engine & Cold Plunge</h4>
+            <ul style="font-size: 0.85rem; color: #D2D8D5; display: flex; flex-direction: column; gap: 8px;">
+              <li>&bull; <strong>SkiErg Interval:</strong> 500m &times; 5 rounds</li>
+              <li>&bull; <strong>Kettlebell Swings (32kg):</strong> 20 reps EMOM &times; 10m</li>
+              <li>&bull; <strong>Curved Runner VO2 Pace:</strong> 15 mins steady</li>
+              <li>&bull; <strong>Hydrotherapy Finish:</strong> 6 mins in 4°C Plunge</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 4: Class Schedule Browser
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-class-schedule">
+      <div class="dash-panel">
+        <div class="dash-panel-header">
+          <div>
+            <h3 class="dash-panel-title"><i class="fa-solid fa-calendar-days"></i> Reserve Coached Sessions</h3>
+            <p style="font-size: 0.85rem; color: #A8ADA5;">Select from today's active schedule or open the full weekly calendar.</p>
+          </div>
+          <a href="404.html" class="btn btn-primary btn-sm">Full Class Timetable</a>
+        </div>
+
+        <div class="comparison-table-wrap" style="margin-top: 16px;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Class Name</th>
+                <th>Zone / Arena</th>
+                <th>Coach</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>06:30 - 07:30</strong></td>
+                <td>HYROX Athletic Conditioning</td>
+                <td>Functional Turf Track</td>
+                <td>Marcus Stone</td>
+                <td><a href="404.html" class="btn btn-primary btn-sm">Reserve Spot</a></td>
+              </tr>
+              <tr>
+                <td><strong>08:00 - 09:15</strong></td>
+                <td>Barbell Strength & Hypertrophy</td>
+                <td>Olympic Platforms</td>
+                <td>Dmitri Volkov</td>
+                <td><a href="404.html" class="btn btn-primary btn-sm">Reserve Spot</a></td>
+              </tr>
+              <tr>
+                <td><strong>12:00 - 13:00</strong></td>
+                <td>Dynamic Vinyasa Flow (Yoga)</td>
+                <td>Studio A</td>
+                <td>Elena Rostova</td>
+                <td><a href="404.html" class="btn btn-primary btn-sm">Reserve Spot</a></td>
+              </tr>
+              <tr>
+                <td><strong>17:30 - 18:30</strong></td>
+                <td>Stackly Zumba & Rhythm Cardio</td>
+                <td>Studio B</td>
+                <td>Priya Sharma</td>
+                <td><span class="badge badge-outline" style="color: var(--color-error);">Class Full</span></td>
+              </tr>
+              <tr>
+                <td><strong>18:45 - 19:45</strong></td>
+                <td>High-Impact Boxing & Striking</td>
+                <td>Combat Ring</td>
+                <td>Tariq Vance</td>
+                <td><a href="404.html" class="btn btn-primary btn-sm">Reserve Spot</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 5: Bookings History
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-bookings">
+      <div class="dash-panel">
+        <div class="dash-panel-header">
+          <h3 class="dash-panel-title"><i class="fa-solid fa-ticket"></i> Master Reservation Records</h3>
+        </div>
+
+        <div id="fullBookingsTableWrapper" class="comparison-table-wrap" style="margin-top: 16px;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Date & Time</th>
+                <th>Session</th>
+                <th>Location</th>
+                <th>Coach</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Today, 18:30</td>
+                <td>HYROX Conditioning</td>
+                <td>Functional Turf Track</td>
+                <td>Coach Marcus</td>
+                <td><span class="badge badge-lime">Confirmed</span></td>
+                <td><a href="404.html" class="btn btn-ghost btn-sm" style="color: var(--color-error);"><i class="fa-solid fa-xmark"></i> Cancel</a></td>
+              </tr>
+              <tr>
+                <td>Oct 31, 10:00</td>
+                <td>Olympic Snatch Workshop</td>
+                <td>Platform 4</td>
+                <td>Coach Dmitri</td>
+                <td><span class="badge badge-lime">Confirmed</span></td>
+                <td><a href="404.html" class="btn btn-ghost btn-sm" style="color: var(--color-error);"><i class="fa-solid fa-xmark"></i> Cancel</a></td>
+              </tr>
+              <tr>
+                <td>Nov 01, 11:30</td>
+                <td>Contrast Plunge & Sauna</td>
+                <td>Recovery Lounge</td>
+                <td>Self-Guided</td>
+                <td><span class="badge badge-lime">Confirmed</span></td>
+                <td><a href="404.html" class="btn btn-ghost btn-sm" style="color: var(--color-error);"><i class="fa-solid fa-xmark"></i> Cancel</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="fullBookingsEmptyState" class="empty-state-card" style="display: none; margin-top: 16px;">
+          <div class="empty-state-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+          <h4 class="empty-state-title">You Have Zero Active Bookings</h4>
+          <p class="empty-state-desc">You are not registered for any upcoming coached sessions or recovery lounge slots.</p>
+          <a href="404.html" class="btn btn-primary btn-sm">Book a Class Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 6: Profile Settings
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-profile">
+      <div class="dash-panel">
+        <div class="dash-panel-header">
+          <h3 class="dash-panel-title"><i class="fa-solid fa-user-gear"></i> Member Profile & Preferences</h3>
+        </div>
+        <form id="dashProfileForm" novalidate>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label class="form-label" for="profileNameInput">Full Legal Name <span class="required">*</span></label>
+              <input type="text" id="profileNameInput" class="form-control" value="Alex Vance" required>
+              <div class="form-feedback"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="profileEmailInput">Email Address <span class="required">*</span></label>
+              <input type="email" id="profileEmailInput" class="form-control" value="alex.vance@stacklyclub.com" required>
+              <div class="form-feedback"></div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label class="form-label" for="profilePhoneInput">Primary Contact Phone</label>
+              <input type="tel" id="profilePhoneInput" class="form-control" value="+91 98200 12345">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="profileEmergencyInput">Emergency Contact Number</label>
+              <input type="tel" id="profileEmergencyInput" class="form-control" value="+91 98200 99999">
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label class="form-label" for="profileGoalSelect">Primary Performance Focus</label>
+              <select id="profileGoalSelect" class="form-control">
+                <option value="hyrox" selected>HYROX & Metabolic Conditioning</option>
+                <option value="strength">Heavy Barbell Strength & Power</option>
+                <option value="mobility">Joint Mobility & Longevity</option>
+                <option value="combat">Boxing & Combat Athletics</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="profileLockerStatic">Assigned RFID Locker</label>
+              <input type="text" id="profileLockerStatic" class="form-control" value="Locker #B-104 (Executive Floor)" readonly>
+            </div>
+          </div>
+
+          <div class="form-check" style="margin-top: 10px;">
+            <input type="checkbox" id="profileAlerts" checked>
+            <label class="form-check-label" for="profileAlerts">
+              Receive SMS and email reminders 2 hours before scheduled class sessions.
+            </label>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <button type="submit" class="btn btn-primary">Save Profile Preferences</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Workout Logger Modal -->
+  <div class="modal-backdrop" id="logWorkoutModal" role="dialog" aria-modal="true" aria-labelledby="logWorkoutTitle">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <div class="modal-header" style="margin-bottom: 20px;">
+        <span class="badge badge-lime" style="margin-bottom: 8px;">RECORD TRAINING SESSION</span>
+        <h3 id="logWorkoutTitle" style="font-size: 1.5rem;">LOG ATHLETIC WORKOUT</h3>
+        <p style="font-size: 0.85rem; color: #A8ADA5;">Save volume, duration, and personal notes to your streak.</p>
+      </div>
+
+      <form id="logWorkoutForm">
+        <div class="form-group">
+          <label class="form-label" for="logWorkoutType">Discipline</label>
+          <select id="logWorkoutType" class="form-control">
+            <option value="Barbell Heavy Strength">Barbell Heavy Strength</option>
+            <option value="HYROX Interval Conditioning">HYROX Interval Conditioning</option>
+            <option value="Olympic Snatch & Clean">Olympic Snatch & Clean</option>
+            <option value="Mobility & Cold Plunge">Mobility & Cold Plunge</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label class="form-label" for="logWorkoutDuration">Duration (Mins)</label>
+            <input type="number" id="logWorkoutDuration" class="form-control" value="65" min="15" max="240">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="logWorkoutRPE">Perceived Exertion (RPE 1-10)</label>
+            <input type="number" id="logWorkoutRPE" class="form-control" value="8" min="1" max="10">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="logWorkoutNotes">Workout Notes / PRs Broken</label>
+          <textarea id="logWorkoutNotes" class="form-control" rows="3" placeholder="E.g., Hit 5x5 back squats at 135kg, moved smooth. 10m cold plunge afterwards."></textarea>
+        </div>
+
+        <div style="margin-top: 20px;">
+          <button type="submit" class="btn btn-primary btn-block">Save to Activity Streak</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

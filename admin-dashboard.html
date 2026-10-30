@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Management Console — STACKLY FITNESS CLUB</title>
+  <meta name="description" content="Centralized administration portal for Stackly Fitness Club staff. Manage member rosters, coaching schedules, facility capacity, and financial analytics.">
+  <meta name="theme-color" content="#0B0D0C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D0C'/%3E%3Cpath d='M4 16h6l3-8 6 16 3-8h6' stroke='%23C7FF3D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body class="dashboard-layout">
+
+  <!-- Mobile Sidebar Overlay -->
+  <div class="dash-sidebar-overlay" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       Admin Dashboard Sidebar Navigation
+       ========================================================================= -->
+  <aside class="dash-sidebar" aria-label="Administrator Navigation">
+    <div>
+      <div class="dash-brand">
+        <a href="index.html" class="brand-logo" aria-label="Back to Public Homepage">
+          <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+        </a>
+        <div style="font-size: 0.7rem; color: var(--color-accent); font-family: var(--font-heading); letter-spacing: 0.1em; margin-top: 6px; text-transform: uppercase;">
+          // ADMIN MANAGEMENT PORTAL
+        </div>
+      </div>
+
+      <nav class="dash-nav-list" role="tablist">
+        <button class="dash-nav-item active" data-tab="admin-overview" role="tab" aria-selected="true">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Dashboard</span>
+        </button>
+        <button class="dash-nav-item" data-tab="admin-members" role="tab" aria-selected="false">
+          <i class="fa-solid fa-users"></i>
+          <span>Member Roster</span>
+        </button>
+        <button class="dash-nav-item" data-tab="admin-trainers" role="tab" aria-selected="false">
+          <i class="fa-solid fa-user-ninja"></i>
+          <span>Trainer Staff</span>
+        </button>
+        <button class="dash-nav-item" data-tab="admin-classes" role="tab" aria-selected="false">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Class Schedule</span>
+        </button>
+        <button class="dash-nav-item" data-tab="admin-facilities" role="tab" aria-selected="false">
+          <i class="fa-solid fa-dumbbell"></i>
+          <span>Facility Status</span>
+        </button>
+        <button class="dash-nav-item" data-tab="admin-settings" role="tab" aria-selected="false">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Admin Profile</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Sidebar Bottom / Admin User Card -->
+    <div class="dash-sidebar-footer">
+      <div class="dash-user-card">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Admin Avatar" class="dash-user-avatar">
+        <div class="dash-user-meta">
+          <div class="dash-user-name">Admin</div>
+          <div class="dash-user-badge">System Administrator</div>
+        </div>
+      </div>
+      <button class="btn btn-secondary btn-sm btn-block dash-logout-btn">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       Admin Dashboard Main View Area
+       ========================================================================= -->
+  <main class="dash-main" role="main">
+    <!-- Top Action Bar -->
+    <div class="dash-header">
+      <!-- Top Row: Search Bar, Bell Icon, Profile Avatar & Name -->
+      <div class="dash-header-top">
+        <div class="dash-header-left">
+          <button class="mobile-dash-nav-toggle" aria-label="Toggle Dashboard Menu">
+            <i class="fa-solid fa-bars"></i> <span>Menu</span>
+          </button>
+          <form class="dash-header-search" id="dashSearchForm" novalidate>
+            <input type="text" id="dashSearchInput" class="dash-search-input" placeholder="Search members, coaches, records...">
+            <button type="submit" class="dash-search-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+
+        <div class="dash-header-right">
+          <a href="404.html" class="dash-bell-btn" id="dashBellBtn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="dash-bell-badge"></span>
+          </a>
+          <div class="dash-header-profile">
+            <div class="dash-header-avatar"><i class="fa-solid fa-circle-user"></i></div>
+            <div class="dash-header-user-meta">
+              <span class="dash-header-profile-name" id="headerProfileName">Admin</span>
+              <span class="dash-header-profile-role" id="headerProfileRole">Administrator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Welcome Title & Quick Actions -->
+      <div class="dash-header-bottom">
+        <div>
+          <h1 class="dash-welcome-title">
+            WELCOME BACK, <span class="text-accent" id="welcomeUserName">ADMIN</span>.
+          </h1>
+          <p style="font-size: 0.875rem; color: #A8ADA5;">
+            Operations Status // All Systems Operational &bull; <span class="badge badge-outline-lime" id="welcomeUserTier">SYSTEM ADMINISTRATOR</span>
+          </p>
+        </div>
+
+        <div class="dash-header-actions">
+          <a href="404.html" class="btn btn-secondary btn-sm">
+            <i class="fa-solid fa-user-plus"></i> Add Member
+          </a>
+          <a href="404.html" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-file-invoice"></i> Export Analytics
+          </a>
+          <a href="index.html" class="btn btn-ghost btn-sm" title="Exit to Public Site">
+            <i class="fa-solid fa-globe"></i> Website
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 1: Overview
+         ======================================================================= -->
+    <div class="dash-tab-pane active" id="tab-admin-overview">
+      <!-- 4 Core Metric Cards -->
+      <div class="dash-stats-grid">
+        <!-- Metric 1: Total Active Members -->
+        <div class="dash-stat-card">
+          <div class="dash-stat-header">
+            <span class="dash-stat-title">Total Active Members</span>
+            <i class="fa-solid fa-users dash-stat-icon"></i>
+          </div>
+          <div class="dash-stat-value" style="color: var(--color-accent);">1,248</div>
+          <div class="dash-stat-trend">
+            <i class="fa-solid fa-arrow-up"></i> <span>+42 new enrollments this month</span>
+          </div>
+        </div>
+
+        <!-- Metric 2: Today's Floor Check-Ins -->
+        <div class="dash-stat-card" style="border-color: var(--color-border-accent); background: #181E1B;">
+          <div class="dash-stat-header">
+            <span class="dash-stat-title" style="color: var(--color-accent);">Live Arena Check-Ins</span>
+            <i class="fa-solid fa-gauge-high text-accent"></i>
+          </div>
+          <div class="dash-stat-value" style="font-size: 2rem;">184</div>
+          <div style="font-size: 0.8rem; color: #D2D8D5;">
+            Peak Hour: 17:30 - 20:00 &bull; 82% Arena Capacity
+          </div>
+        </div>
+
+        <!-- Metric 3: Monthly Revenue -->
+        <div class="dash-stat-card">
+          <div class="dash-stat-header">
+            <span class="dash-stat-title">Monthly MRR</span>
+            <i class="fa-solid fa-indian-rupee-sign dash-stat-icon"></i>
+          </div>
+          <div class="dash-stat-value">₹56.2L</div>
+          <div class="dash-stat-trend">
+            <i class="fa-solid fa-arrow-up"></i> <span>+14.8% vs last month</span>
+          </div>
+        </div>
+
+        <!-- Metric 4: Coaches on Duty -->
+        <div class="dash-stat-card">
+          <div class="dash-stat-header">
+            <span class="dash-stat-title">Coaches on Duty</span>
+            <i class="fa-solid fa-stopwatch-20 dash-stat-icon"></i>
+          </div>
+          <div class="dash-stat-value">12 / 14</div>
+          <div class="dash-stat-trend">
+            <i class="fa-solid fa-check"></i> <span>All training zones staffed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two-Column Grid: Revenue Volume & Real-time Check-ins -->
+      <div class="dash-content-grid">
+        <!-- Panel 1: Activity Chart -->
+        <div class="dash-panel">
+          <div class="dash-panel-header">
+            <h3 class="dash-panel-title">
+              <i class="fa-solid fa-chart-column"></i> Weekly Floor Attendance Distribution
+            </h3>
+            <span class="badge badge-outline">Past 7 Days</span>
+          </div>
+          <p style="font-size: 0.85rem; color: #A8ADA5; margin-bottom: 16px;">
+            Daily member turnstile entries across morning, afternoon, and evening training waves.
+          </p>
+
+          <div class="dash-chart-container">
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 80%;"></div></div>
+              <span class="chart-bar-label">Mon</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 92%;"></div></div>
+              <span class="chart-bar-label">Tue</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 65%;"></div></div>
+              <span class="chart-bar-label">Wed</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 88%;"></div></div>
+              <span class="chart-bar-label" style="color: var(--color-accent); font-weight: 800;">Thu</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 74%;"></div></div>
+              <span class="chart-bar-label">Fri</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 98%;"></div></div>
+              <span class="chart-bar-label">Sat</span>
+            </div>
+            <div class="chart-bar-group">
+              <div class="chart-bar-track"><div class="chart-bar-fill" style="height: 45%;"></div></div>
+              <span class="chart-bar-label">Sun</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel 2: Live Check-in Stream -->
+        <div class="dash-panel">
+          <div class="dash-panel-header">
+            <h3 class="dash-panel-title">
+              <i class="fa-solid fa-id-badge"></i> Live Member Check-ins
+            </h3>
+            <a href="404.html" class="btn btn-ghost btn-sm" style="font-size: 0.725rem; color: var(--color-accent);">
+              <i class="fa-solid fa-arrows-rotate"></i> Refresh Feed
+            </a>
+          </div>
+
+          <div class="booked-sessions-list">
+            <div class="booked-session-item">
+              <div class="session-badge-date">
+                <div class="session-day">16:42</div>
+                <div class="session-month">TIME</div>
+              </div>
+              <div class="session-details">
+                <div class="session-title">Vikram Rathore</div>
+                <div class="session-meta">
+                  <span><i class="fa-solid fa-shield-halved text-accent"></i> Elite Tier</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Olympic Platforms</span>
+                </div>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm" title="View Member Profile">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+
+            <div class="booked-session-item">
+              <div class="session-badge-date">
+                <div class="session-day">16:30</div>
+                <div class="session-month">TIME</div>
+              </div>
+              <div class="session-details">
+                <div class="session-title">Sarah Jenkins</div>
+                <div class="session-meta">
+                  <span><i class="fa-solid fa-shield-halved text-accent"></i> Performance Tier</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Functional Turf Track</span>
+                </div>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm" title="View Member Profile">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+
+            <div class="booked-session-item">
+              <div class="session-badge-date">
+                <div class="session-day">16:15</div>
+                <div class="session-month">TIME</div>
+              </div>
+              <div class="session-details">
+                <div class="session-title">Rohit Mehta</div>
+                <div class="session-meta">
+                  <span><i class="fa-solid fa-shield-halved text-accent"></i> Essential Tier</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Cardio Arena</span>
+                </div>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm" title="View Member Profile">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 2: Member Management Roster
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-admin-members">
+      <div class="dash-panel">
+        <div class="dash-panel-header">
+          <div>
+            <h3 class="dash-panel-title"><i class="fa-solid fa-users"></i> Member Directory & Membership Status</h3>
+            <p style="font-size: 0.85rem; color: #A8ADA5; margin-top: 4px;">Search, verify memberships, review RFID access tokens, or update athlete profiles.</p>
+          </div>
+          <a href="404.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-user-plus"></i> Register New Athlete</a>
+        </div>
+
+        <div class="comparison-table-wrap" style="margin-top: 16px;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Member ID</th>
+                <th>Full Name</th>
+                <th>Membership Tier</th>
+                <th>Expiry / Renewal</th>
+                <th>RFID Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>#STACKLY-1092</strong></td>
+                <td>Alex Vance</td>
+                <td><span class="badge badge-lime">Performance Tier</span></td>
+                <td>Nov 28, 2026</td>
+                <td><span style="color: #00E676;"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Manage Member</a></td>
+              </tr>
+              <tr>
+                <td><strong>#STACKLY-1088</strong></td>
+                <td>Vikram Rathore</td>
+                <td><span class="badge badge-lime">Elite Tier</span></td>
+                <td>Dec 15, 2026</td>
+                <td><span style="color: #00E676;"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Manage Member</a></td>
+              </tr>
+              <tr>
+                <td><strong>#STACKLY-1074</strong></td>
+                <td>Sarah Jenkins</td>
+                <td><span class="badge badge-lime">Performance Tier</span></td>
+                <td>Oct 31, 2026</td>
+                <td><span style="color: #FFB300;"><i class="fa-solid fa-triangle-exclamation"></i> Renewal Pending</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Manage Member</a></td>
+              </tr>
+              <tr>
+                <td><strong>#STACKLY-1052</strong></td>
+                <td>Rohit Mehta</td>
+                <td><span class="badge badge-lime">Essential Tier</span></td>
+                <td>Jan 10, 2027</td>
+                <td><span style="color: #00E676;"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Manage Member</a></td>
+              </tr>
+              <tr>
+                <td><strong>#STACKLY-1041</strong></td>
+                <td>Pooja Nambiar</td>
+                <td><span class="badge badge-lime">Elite Tier</span></td>
+                <td>Nov 05, 2026</td>
+                <td><span style="color: #00E676;"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Manage Member</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 3: Trainer Staff & Scheduling
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-admin-trainers">
+      <div class="dash-panel">
+        <div class="dash-panel-header">
+          <div>
+            <h3 class="dash-panel-title"><i class="fa-solid fa-user-ninja"></i> Coaching Roster & Staff Assignments</h3>
+            <p style="font-size: 0.85rem; color: #A8ADA5; margin-top: 4px;">Monitor active floor shifts, personal training bookings, and client allocations.</p>
+          </div>
+          <a href="404.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-user-tie"></i> Add Staff Member</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 16px;" class="why-us-pillars">
+          <!-- Coach 1 -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-lime">HEAD COACH</span>
+              <span style="font-size: 0.8rem; color: #00E676;"><i class="fa-solid fa-circle"></i> On Floor</span>
+            </div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 4px;">Marcus Stone</h4>
+            <p style="font-size: 0.85rem; color: #A8ADA5; margin-bottom: 12px;">Lead HYROX Conditioning Specialist & Engine Coach</p>
+            <ul style="font-size: 0.85rem; color: #D2D8D5; display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <li>&bull; Assigned Zone: <strong>Functional Turf Track</strong></li>
+              <li>&bull; Shift: <strong>06:00 - 14:00 (Active)</strong></li>
+              <li>&bull; Today's PT Clients: <strong>5 Bookings</strong></li>
+            </ul>
+            <a href="404.html" class="btn btn-secondary btn-sm btn-block">Assign Shift Schedule</a>
+          </div>
+
+          <!-- Coach 2 -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-lime">STRENGTH COACH</span>
+              <span style="font-size: 0.8rem; color: #00E676;"><i class="fa-solid fa-circle"></i> On Floor</span>
+            </div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 4px;">Dmitri Volkov</h4>
+            <p style="font-size: 0.85rem; color: #A8ADA5; margin-bottom: 12px;">Olympic Weightlifting & Heavy Barbell Hypertrophy</p>
+            <ul style="font-size: 0.85rem; color: #D2D8D5; display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <li>&bull; Assigned Zone: <strong>Olympic Platforms & Racks</strong></li>
+              <li>&bull; Shift: <strong>14:00 - 22:00 (Active)</strong></li>
+              <li>&bull; Today's PT Clients: <strong>6 Bookings</strong></li>
+            </ul>
+            <a href="404.html" class="btn btn-secondary btn-sm btn-block">Assign Shift Schedule</a>
+          </div>
+
+          <!-- Coach 3 -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-lime">RECOVERY SPECIALIST</span>
+              <span style="font-size: 0.8rem; color: #A8ADA5;"><i class="fa-regular fa-clock"></i> Shift at 17:00</span>
+            </div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 4px;">Elena Rostova</h4>
+            <p style="font-size: 0.85rem; color: #A8ADA5; margin-bottom: 12px;">Dynamic Vinyasa, Breathwork & Joint Longevity</p>
+            <ul style="font-size: 0.85rem; color: #D2D8D5; display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <li>&bull; Assigned Zone: <strong>Mind-Body Studio A</strong></li>
+              <li>&bull; Shift: <strong>17:00 - 21:00</strong></li>
+              <li>&bull; Today's PT Clients: <strong>3 Bookings</strong></li>
+            </ul>
+            <a href="404.html" class="btn btn-secondary btn-sm btn-block">Assign Shift Schedule</a>
+          </div>
+
+          <!-- Coach 4 -->
+          <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <span class="badge badge-lime">COMBAT HEAD</span>
+              <span style="font-size: 0.8rem; color: #00E676;"><i class="fa-solid fa-circle"></i> On Floor</span>
+            </div>
+            <h4 style="font-size: 1.2rem; margin-bottom: 4px;">Tariq Vance</h4>
+            <p style="font-size: 0.85rem; color: #A8ADA5; margin-bottom: 12px;">Striking, Boxing Sparring & High-Intensity Footwork</p>
+            <ul style="font-size: 0.85rem; color: #D2D8D5; display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;">
+              <li>&bull; Assigned Zone: <strong>Combat Ring Arena</strong></li>
+              <li>&bull; Shift: <strong>15:00 - 22:00 (Active)</strong></li>
+              <li>&bull; Today's PT Clients: <strong>4 Bookings</strong></li>
+            </ul>
+            <a href="404.html" class="btn btn-secondary btn-sm btn-block">Assign Shift Schedule</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 4: Master Class Schedule Management
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-admin-classes">
+      <div class="dash-panel">
+        <div class="dash-panel-header">
+          <div>
+            <h3 class="dash-panel-title"><i class="fa-solid fa-calendar-check"></i> Master Class Schedule Control</h3>
+            <p style="font-size: 0.85rem; color: #A8ADA5;">Adjust capacity, assign coaches, and publish weekly training slots.</p>
+          </div>
+          <a href="404.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-plus"></i> Create New Class Slot</a>
+        </div>
+
+        <div class="comparison-table-wrap" style="margin-top: 16px;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Time Window</th>
+                <th>Class Name</th>
+                <th>Arena Zone</th>
+                <th>Assigned Coach</th>
+                <th>Capacity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>06:30 - 07:30</strong></td>
+                <td>HYROX Athletic Conditioning</td>
+                <td>Functional Turf Track</td>
+                <td>Marcus Stone</td>
+                <td><span class="badge badge-lime">24 / 24 Full</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Edit Slot</a></td>
+              </tr>
+              <tr>
+                <td><strong>08:00 - 09:15</strong></td>
+                <td>Barbell Strength & Hypertrophy</td>
+                <td>Olympic Platforms</td>
+                <td>Dmitri Volkov</td>
+                <td><span class="badge badge-lime">16 / 18 Booked</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Edit Slot</a></td>
+              </tr>
+              <tr>
+                <td><strong>12:00 - 13:00</strong></td>
+                <td>Dynamic Vinyasa Flow (Yoga)</td>
+                <td>Studio A</td>
+                <td>Elena Rostova</td>
+                <td><span class="badge badge-lime">14 / 20 Booked</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Edit Slot</a></td>
+              </tr>
+              <tr>
+                <td><strong>17:30 - 18:30</strong></td>
+                <td>Stackly Zumba & Rhythm Cardio</td>
+                <td>Studio B</td>
+                <td>Priya Sharma</td>
+                <td><span class="badge badge-lime">30 / 30 Full</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Edit Slot</a></td>
+              </tr>
+              <tr>
+                <td><strong>18:45 - 19:45</strong></td>
+                <td>High-Impact Boxing & Striking</td>
+                <td>Combat Ring</td>
+                <td>Tariq Vance</td>
+                <td><span class="badge badge-lime">15 / 16 Booked</span></td>
+                <td><a href="404.html" class="btn btn-secondary btn-sm">Edit Slot</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 5: Facility Status & Equipment Logs
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-admin-facilities">
+      <div class="dash-panel">
+        <div class="dash-panel-header">
+          <div>
+            <h3 class="dash-panel-title"><i class="fa-solid fa-dumbbell"></i> Facility Zones & Equipment Logs</h3>
+            <p style="font-size: 0.85rem; color: #A8ADA5;">Real-time diagnostics for cold plunges, saunas, barbell racks, and turf areas.</p>
+          </div>
+          <a href="404.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-wrench"></i> Log Maintenance</a>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px;" class="why-us-pillars">
+          <div class="pillar-item">
+            <i class="fa-solid fa-circle-check text-accent"></i>
+            <div>
+              <strong>Hydrotherapy Cold Plunge (Tub A & B)</strong>
+              <p style="font-size: 0.8rem; color: #A8ADA5;">Current Temp: 3.8°C &bull; Filter Status: Optimal &bull; Next Clean: Tomorrow 04:00</p>
+              <div style="margin-top: 8px;"><a href="404.html" class="btn btn-ghost btn-sm">Calibrate Sensors</a></div>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <i class="fa-solid fa-circle-check text-accent"></i>
+            <div>
+              <strong>Olympic Platforms (12 Stations)</strong>
+              <p style="font-size: 0.8rem; color: #A8ADA5;">Eleiko Cerakote Barbells Inspected &bull; All collars accounted for.</p>
+              <div style="margin-top: 8px;"><a href="404.html" class="btn btn-ghost btn-sm">Audit Equipment</a></div>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <i class="fa-solid fa-circle-check text-accent"></i>
+            <div>
+              <strong>Cardio Aerobic Deck (Curved Treadmills & SkiErgs)</strong>
+              <p style="font-size: 0.8rem; color: #A8ADA5;">Assault Fitness & Concept2 firmware verified &bull; 100% operational.</p>
+              <div style="margin-top: 8px;"><a href="404.html" class="btn btn-ghost btn-sm">Run Diagnostic</a></div>
+            </div>
+          </div>
+          <div class="pillar-item">
+            <i class="fa-solid fa-circle-check text-accent"></i>
+            <div>
+              <strong>RFID Turnstiles & Executive Locker Suite</strong>
+              <p style="font-size: 0.8rem; color: #A8ADA5;">Lockers #1 - #200 Online &bull; Battery backup active &bull; Cloud sync live.</p>
+              <div style="margin-top: 8px;"><a href="404.html" class="btn btn-ghost btn-sm">Manage RFID</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         Tab Pane 6: Admin Profile & System Settings
+         ======================================================================= -->
+    <div class="dash-tab-pane" id="tab-admin-settings">
+      <div class="dash-panel">
+        <div class="dash-panel-header">
+          <h3 class="dash-panel-title"><i class="fa-solid fa-sliders"></i> Administrator Profile & Configuration</h3>
+        </div>
+        <form id="adminProfileForm" novalidate>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label class="form-label" for="adminNameInput">Admin Full Name <span class="required">*</span></label>
+              <input type="text" id="adminNameInput" class="form-control" value="Admin" required>
+              <div class="form-feedback"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="adminEmailInput">Official Email Address <span class="required">*</span></label>
+              <input type="email" id="adminEmailInput" class="form-control" value="admin@stacklyclub.com" required>
+              <div class="form-feedback"></div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label class="form-label" for="adminPhoneInput">Emergency Duty Contact</label>
+              <input type="tel" id="adminPhoneInput" class="form-control" value="+91 98200 88888">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="adminDepartmentInput">Assigned Management Department</label>
+              <input type="text" id="adminDepartmentInput" class="form-control" value="Floor Operations & Athletic Strategy" readonly>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label class="form-label" for="adminSecurityClearance">Security Clearance Level</label>
+              <select id="adminSecurityClearance" class="form-control">
+                <option value="super" selected>Level 3: Full Super Administrator</option>
+                <option value="manager">Level 2: Operations Manager</option>
+                <option value="trainer">Level 1: Senior Head Coach</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="adminTwoFactor">Two-Factor Security Authentication</label>
+              <input type="text" id="adminTwoFactor" class="form-control" value="Hardware FIDO2 Security Key Enabled" readonly>
+            </div>
+          </div>
+
+          <div class="form-check" style="margin-top: 10px;">
+            <input type="checkbox" id="adminAuditAlerts" checked>
+            <label class="form-check-label" for="adminAuditAlerts">
+              Receive immediate system alerts when turnstile entry exceeds maximum safety capacity.
+            </label>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <button type="submit" class="btn btn-primary">Save Admin Configuration</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

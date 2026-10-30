@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us & Location — STACKLY FITNESS CLUB</title>
+  <meta name="description" content="Reach our admissions advisory desk, schedule an in-person facility walkthrough, or visit our training grounds in Bandra West, Mumbai.">
+  <meta property="og:title" content="Contact Us — STACKLY FITNESS CLUB">
+  <meta property="og:description" content="Operating hours, admissions advisory, location directions, and member services.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B0D0C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D0C'/%3E%3Cpath d='M4 16h6l3-8 6 16 3-8h6' stroke='%23C6FF00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB Homepage">
+        <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        
+        <div class="nav-item-dropdown">
+          <a href="classes.html" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Programs <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="classes.html#group-classes" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Group Classes <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">HIIT, Hyrox, mobility & strength camps</span>
+            </a>
+            <a href="classes.html#personal-training" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Personal Training <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">1-on-1 coaching & tailored biomechanics</span>
+            </a>
+            <a href="classes.html#facilities-recovery" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Facilities & Recovery <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">Hydrotherapy, saunas & open turf zones</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="trainers.html" class="nav-link">Trainers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link">
+          <i class="fa-regular fa-user"></i>
+          <span>Member Login</span>
+        </a>
+        <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+    <!-- Mobile Drawer & Overlay -->
+  <div class="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY HOME">
+        <img src="logo.webp" alt="STACKLY" class="brand-logo-img">
+      </a>
+      <button type="button" class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="classes.html" class="mobile-nav-link">Programs</a>
+      <a href="trainers.html" class="mobile-nav-link">Trainers</a>
+      <a href="membership.html" class="mobile-nav-link">Membership Plans</a>
+      <a href="contact.html" class="mobile-nav-link active">Contact</a>
+      <a href="login.html" class="mobile-nav-link mobile-nav-link-auth">
+        <i class="fa-solid fa-right-to-bracket"></i> Member Sign In
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-current" aria-current="page">Contact Us</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="eyebrow">Get in Touch</span>
+        <h1 class="page-hero-title">WE ARE HERE TO HELP YOU <span class="text-accent">BEGIN</span>.</h1>
+        <p class="page-hero-subtitle">
+          Whether you have questions regarding memberships, need corporate wellness consulting, or want to schedule a physical walkthrough, our advisory team is ready.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Athletic Kinetic Ticker Ribbon -->
+  <div class="athletic-marquee-wrap" aria-hidden="true">
+    <div class="athletic-marquee-track">
+      <div class="athletic-marquee-item"><i class="fa-solid fa-phone item-accent"></i> <span>+91 98200 12345</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-envelope item-accent"></i> <span>INFO@STACKLYFITNESS.COM</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-location-dot item-accent"></i> <span>MMR COMPLEX, CHINNA THIRUPATHI, SALEM 636008</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-clock item-accent"></i> <span>DOORS OPEN DAILY AT 05:00 AM</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-phone item-accent"></i> <span>+91 98200 12345</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-envelope item-accent"></i> <span>INFO@STACKLYFITNESS.COM</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-location-dot item-accent"></i> <span>MMR COMPLEX, CHINNA THIRUPATHI, SALEM 636008</span> <span class="item-dot"></span></div>
+      <div class="athletic-marquee-item"><i class="fa-solid fa-clock item-accent"></i> <span>DOORS OPEN DAILY AT 05:00 AM</span> <span class="item-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- Split Screen Contact & Information -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="contact-split-grid">
+        <!-- Left: Club Details & Hours -->
+        <div class="contact-info-panel">
+          <div class="contact-detail-group">
+            <h3 class="contact-detail-title"><i class="fa-solid fa-location-dot"></i> Club Headquarters</h3>
+            <p style="color: #FFF; font-size: 1rem; line-height: 1.5; margin-bottom: 6px;">
+              MMR Complex, Chinna Thirupathi,<br>
+              Near Chinna Mariamman Kovil, Salem 636008
+            </p>
+            <p style="font-size: 0.8125rem; color: #8E9290;">
+              Parking available on premises. Conveniently located near Chinna Mariamman Kovil.
+            </p>
+          </div>
+
+          <div class="contact-detail-group">
+            <h3 class="contact-detail-title"><i class="fa-solid fa-clock"></i> Club Operating Hours</h3>
+            <div class="contact-hours-list">
+              <div class="contact-hours-row">
+                <span style="color: #FFF;">Monday – Friday</span>
+                <span class="text-accent" style="font-weight: 700;">05:00 – 23:00</span>
+              </div>
+              <div class="contact-hours-row">
+                <span style="color: #FFF;">Saturday – Sunday</span>
+                <span class="text-accent" style="font-weight: 700;">06:00 – 21:00</span>
+              </div>
+              <div class="contact-hours-row">
+                <span style="color: #8E9290;">Hydrotherapy Suite</span>
+                <span style="color: #8E9290;">Closes 30m before floor</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-detail-group">
+            <h3 class="contact-detail-title"><i class="fa-solid fa-phone"></i> Direct Telephone & Email</h3>
+            <p style="font-size: 0.9rem; margin-bottom: 8px;">
+              Phone: <a href="tel:+919820012345" style="color: #FFF; font-weight: 700; text-decoration: underline; text-decoration-color: var(--color-border-accent);">+91 98200 12345</a>
+            </p>
+            <p style="font-size: 0.9rem; margin-bottom: 8px;">
+              Personal Coaching: <a href="tel:+919820012346" style="color: #FFF; font-weight: 700; text-decoration: underline; text-decoration-color: var(--color-border-accent);">+91 98200 12346</a>
+            </p>
+            <p style="font-size: 0.9rem; margin-bottom: 14px;">
+              Email: <a href="mailto:info@stacklyfitness.com" style="color: var(--color-accent); font-weight: 700; text-decoration: underline;">info@stacklyfitness.com</a>
+            </p>
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: #8E9290; margin-bottom: 8px; font-weight: 700;">
+              Connect With Us
+            </div>
+            <div class="footer-socials" style="margin-top: 0;">
+              <a href="404.html" class="social-link" aria-label="STACKLY on Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="404.html" class="social-link" aria-label="STACKLY on YouTube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="404.html" class="social-link" aria-label="STACKLY on X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="404.html" class="social-link" aria-label="STACKLY on Spotify"><i class="fa-brands fa-spotify"></i></a>
+            </div>
+          </div>
+
+          <!-- Stylized Dark Map Embed & Directions Link -->
+          <div style="margin-top: 24px; border: 1px solid var(--color-border); border-radius: var(--radius-xs); overflow: hidden; height: 180px; position: relative; background: #0E1210; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
+            <i class="fa-solid fa-map-location-dot text-accent" style="font-size: 2rem; margin-bottom: 8px;"></i>
+            <div style="font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; color: #FFF; text-transform: uppercase;">Salem Headquarters</div>
+            <p style="font-size: 0.775rem; color: #A8ADA5; margin: 4px 0 10px;">MMR Complex, Chinna Thirupathi, Near Chinna Mariamman Kovil</p>
+            <a href="https://maps.google.com/?q=Chinna+Thirupathi+Salem" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="font-size: 0.725rem; padding: 6px 12px;">
+              <i class="fa-solid fa-diamond-turn-right text-accent"></i> Open Directions in Google Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-form-panel">
+          <span class="eyebrow">Direct Message</span>
+          <h2 style="font-size: 1.8rem; margin-bottom: 8px;">SEND US AN INQUIRY.</h2>
+          <p style="font-size: 0.9rem; color: #A2A8A5; margin-bottom: 24px;">
+            Fill in your details and an admissions specialist will reply within 4 business hours.
+          </p>
+
+          <form id="contactForm" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="contactName">Your Name <span class="required">*</span></label>
+              <input type="text" id="contactName" class="form-control" placeholder="Alex Vance" required>
+              <div class="form-feedback"></div>
+            </div>
+
+            <div class="form-row-2col">
+              <div class="form-group">
+                <label class="form-label" for="contactEmail">Email Address <span class="required">*</span></label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="alex@domain.com" required>
+                <div class="form-feedback"></div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contactPhone">Phone Number</label>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="+91 98200 00000">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactSubject">Subject of Inquiry <span class="required">*</span></label>
+              <select id="contactSubject" class="form-control" required>
+                <option value="" disabled selected>Select a topic...</option>
+                <option value="membership">Membership Tiers & Pricing</option>
+                <option value="pt">Personal Training Consultation</option>
+                <option value="corporate">Corporate Wellness Partnerships</option>
+                <option value="facilities">Tour / Walkthrough Request</option>
+                <option value="other">General Questions</option>
+              </select>
+              <div class="form-feedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMessage">Message <span class="required">*</span></label>
+              <textarea id="contactMessage" class="form-control" rows="4" placeholder="How can we assist you in reaching your training goals?" required></textarea>
+              <div class="form-feedback"></div>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="contactConsent" required checked>
+              <label class="form-check-label" for="contactConsent">
+                I agree to be contacted by Stackly Fitness Club regarding this inquiry.
+              </label>
+            </div>
+
+            <div style="margin-top: 24px;">
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+            <p style="font-size: 0.725rem; color: #6E7572; text-align: center; margin-top: 12px;">
+              Demo contact flow. Forms validate inputs and simulate instantaneous response.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Visitor FAQ Support -->
+  <section class="section section-surface" id="contact-faq">
+    <div class="container container-narrow">
+      <div class="section-header text-center">
+        <span class="eyebrow">Visitor Support</span>
+        <h2>COMMON VISITATION & CONTACT QUESTIONS.</h2>
+        <p class="lead">Essential details for scheduling tours, parking, and first-time guest passes.</p>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">Is on-site member parking provided?</span>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-content">
+            <p>Yes. We offer secure complimentary valet parking on level B1 for all active members and scheduled tour guests during entire club operating hours.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">Can I drop by for a tour without an appointment?</span>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-content">
+            <p>Walk-ins are welcome between 09:00 and 19:00 daily. However, to guarantee an assigned coach for movement screenings, booking through our online form is recommended.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">How quickly does the admissions desk respond?</span>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-content">
+            <p>Our front desk staff monitors messages continuously and typically responds to online inquiries within 4 business hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB">
+            <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+          </a>
+          <p class="footer-desc">
+            A premium human performance collective engineered for progressive strength training, metabolic conditioning, and complete biological restoration.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-link" aria-label="STACKLY on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on Spotify"><i class="fa-brands fa-spotify"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Programs (all redirect to 404.html) -->
+        <div>
+          <h4 class="footer-heading">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link">Strength & Conditioning</a></li>
+            <li><a href="404.html" class="footer-link">Personal Training</a></li>
+            <li><a href="404.html" class="footer-link">Functional Fitness</a></li>
+            <li><a href="404.html" class="footer-link">HIIT & Metabolic Sprints</a></li>
+            <li><a href="404.html" class="footer-link">Yoga & Joint Mobility</a></li>
+            <li><a href="404.html" class="footer-link">Contrast Recovery Suite</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="classes.html" class="footer-link">Programs</a></li>
+            <li><a href="trainers.html" class="footer-link">Trainers</a></li>
+            <li><a href="membership.html" class="footer-link">Membership</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Club Headquarters -->
+        <div>
+          <h4 class="footer-heading">Club Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Chinna Thirupathi, Near Chinna Mariamman Kovil, Salem 636008</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+919820012345" style="color: inherit;">+91 98200 12345</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:info@stacklyfitness.com" style="color: inherit;">info@stacklyfitness.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon–Fri: 05:00–23:00<br>Sat–Sun: 06:00–21:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Bar -->
+      <div style="padding: 24px 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div style="font-family: var(--font-heading); font-weight: 700; color: #FFF; text-transform: uppercase;">The Stackly Dispatch</div>
+          <p style="font-size: 0.825rem; color: #8E9290;">Weekly research, biomechanics breakdowns, and training schedules delivered to your inbox.</p>
+        </div>
+        <form class="footer-newsletter-form" id="footerNewsletterForm" novalidate style="display: flex; flex-direction: column; max-width: 420px; width: 100%;">
+          <div style="display: flex; gap: 8px; width: 100%;">
+            <input type="email" name="email" class="form-control" placeholder="Enter your email address" style="padding: 10px 14px; font-size: 0.85rem; flex: 1;">
+            <button type="submit" class="btn btn-primary btn-sm" style="white-space: nowrap;">Subscribe</button>
+          </div>
+          <div class="newsletter-error-msg" style="color: #FF5252; font-size: 0.8rem; margin-top: 6px; display: none; font-weight: 600;"></div>
+        </form>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 STACKLY FITNESS CLUB. All Rights Reserved. Engineered for athletic excellence.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms & Conditions</a>
+          <a href="404.html">Safety Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

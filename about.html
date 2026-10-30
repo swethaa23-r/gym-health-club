@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — STACKLY FITNESS CLUB</title>
+  <meta name="description" content="Discover the philosophy, standard, and coaching ethos behind Stackly Fitness Club. Engineered for progressive human performance.">
+  <meta property="og:title" content="About STACKLY FITNESS CLUB — The Standard of Athletic Excellence">
+  <meta property="og:description" content="Our mission, 4-pillar methodology, coaching credentials, and high-performance training culture.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B0D0C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D0C'/%3E%3Cpath d='M4 16h6l3-8 6 16 3-8h6' stroke='%23C6FF00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB Homepage">
+        <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        
+        <div class="nav-item-dropdown">
+          <a href="classes.html" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            Programs <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="classes.html#group-classes" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Group Classes <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">HIIT, Hyrox, mobility & strength camps</span>
+            </a>
+            <a href="classes.html#personal-training" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Personal Training <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">1-on-1 coaching & tailored biomechanics</span>
+            </a>
+            <a href="classes.html#facilities-recovery" class="dropdown-link" role="menuitem">
+              <span class="dropdown-link-title">Facilities & Recovery <i class="fa-solid fa-arrow-right"></i></span>
+              <span class="dropdown-link-desc">Hydrotherapy, saunas & open turf zones</span>
+            </a>
+          </div>
+        </div>
+
+        <a href="trainers.html" class="nav-link">Trainers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link" aria-label="Sign In to Member Portal">
+          <i class="fa-regular fa-user"></i>
+          <span>Member Login</span>
+        </a>
+        <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+    <!-- Mobile Drawer & Overlay -->
+  <div class="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY HOME">
+        <img src="logo.webp" alt="STACKLY" class="brand-logo-img">
+      </a>
+      <button type="button" class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link active">About Us</a>
+      <a href="classes.html" class="mobile-nav-link">Programs</a>
+      <a href="trainers.html" class="mobile-nav-link">Trainers</a>
+      <a href="membership.html" class="mobile-nav-link">Membership Plans</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="login.html" class="mobile-nav-link mobile-nav-link-auth">
+        <i class="fa-solid fa-right-to-bracket"></i> Member Sign In
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Breadcrumb Bar -->
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></li>
+        <li class="breadcrumb-current" aria-current="page">About Us</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <span class="eyebrow">The Stackly Ethos</span>
+        <h1 class="page-hero-title">WE ARE THE <span class="text-accent">STACKLY</span> OF ATHLETIC PROGRESS.</h1>
+        <p class="page-hero-subtitle">
+          Founded on the conviction that serious physical training should be guided by biomechanical science, elite equipment, and uncompromising coach integrity.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mission & Vision Split -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="why-us-grid" style="align-items: center;">
+        <div>
+          <span class="eyebrow">Our Mission & Purpose</span>
+          <h2>FORGING RESILIENT BODIES AND UNSTOPPABLE MINDSETS.</h2>
+          <p class="lead" style="margin-bottom: 24px;">
+            In a world saturated with generic fitness franchises offering empty gimmicks, Stackly was constructed to deliver an authentic performance sanctuary.
+          </p>
+          <p style="margin-bottom: 20px;">
+            We believe physical resilience is the bedrock of cognitive clarity, career durability, and lifelong vitality. We do not sell shortcuts, crash diets, or quick fixes. We teach you how to master the barbell, build functional cardiovascular endurance, and sustain your physical peak across decades.
+          </p>
+          <div style="margin-top: 28px;">
+            <a href="membership.html" class="btn btn-primary">
+              <span>Experience The Standard</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="why-us-visual">
+          <div class="why-us-image-main" style="aspect-ratio: 16/10;">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=80" alt="Stackly Fitness training floor overview" loading="lazy">
+          </div>
+          <div class="why-us-floating-stat">
+            <div class="eyebrow" style="margin-bottom: 2px;">THE ARENA</div>
+            <div style="font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800; color: #FFF;">
+              18,000 SQ FT
+            </div>
+            <p style="font-size: 0.75rem; color: #A8ADA5; margin-top: 4px;">Olympic drop platforms & sprint turf.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values (Consistent Icon Cards) -->
+  <section class="section section-surface" id="values">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Core Standards</span>
+        <h2>THE VALUES THAT GUIDE OUR CRAFT.</h2>
+        <p class="lead">Four uncompromising pillars that define how we coach, program, and build community.</p>
+      </div>
+
+      <div class="dash-stats-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="card" data-aos="fade-up" data-aos-delay="100" style="padding: 28px 22px;">
+          <i class="fa-solid fa-microscope text-accent" style="font-size: 1.6rem; margin-bottom: 14px;"></i>
+          <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Scientific Rigor</h3>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Every protocol is grounded in biomechanics, kinesiology, and progressive overload. Zero guesswork or fad routines.
+          </p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="200" style="padding: 28px 22px;">
+          <i class="fa-solid fa-handshake-simple text-accent" style="font-size: 1.6rem; margin-bottom: 14px;"></i>
+          <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Client Integrity</h3>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Zero hidden fees, transparent terms, and coaches who care about your joint longevity over quick sales commissions.
+          </p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="300" style="padding: 28px 22px;">
+          <i class="fa-solid fa-users text-accent" style="font-size: 1.6rem; margin-bottom: 14px;"></i>
+          <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Athlete Inclusivity</h3>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Whether working toward your first strict pull-up or preparing for a national HYROX podium, all honest effort is respected.
+          </p>
+        </div>
+
+        <div class="card" data-aos="fade-up" data-aos-delay="400" style="padding: 28px 22px;">
+          <i class="fa-solid fa-water text-accent" style="font-size: 1.6rem; margin-bottom: 14px;"></i>
+          <h3 style="font-size: 1.1rem; margin-bottom: 8px;">Bio-Recovery</h3>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Muscles and nervous systems adapt during rest. We treat contrast hydrotherapy and down-regulation as essential work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Achievements & Statistics -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Measurable Impact</span>
+        <h2>PROVEN STANDARDS AT SCALE.</h2>
+        <p class="lead">Sample operational metrics reflecting our high-performance facility.</p>
+      </div>
+
+      <div class="stats-grid-4">
+        <div class="card" style="text-align: center; padding: 32px 20px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 800; color: var(--color-accent); line-height: 1;">
+            <span data-counter-target="18000">18,000</span>
+          </div>
+          <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: #FFF; text-transform: uppercase; margin-top: 8px;">Square Feet</div>
+          <p style="font-size: 0.775rem; color: #8E9290; margin-top: 4px;">Olympic platforms, turf & plunge arena</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 32px 20px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 800; color: #FFF; line-height: 1;">
+            <span data-counter-target="100">100</span>%
+          </div>
+          <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: #FFF; text-transform: uppercase; margin-top: 8px;">Certified Coaches</div>
+          <p style="font-size: 0.775rem; color: #8E9290; margin-top: 4px;">CSCS, USAW, FRC credentials only</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 32px 20px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 800; color: var(--color-accent); line-height: 1;">
+            <span data-counter-target="1200">1,200</span>+
+          </div>
+          <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: #FFF; text-transform: uppercase; margin-top: 8px;">Active Members</div>
+          <p style="font-size: 0.775rem; color: #8E9290; margin-top: 4px;">Dedicated, ego-free community</p>
+        </div>
+
+        <div class="card" style="text-align: center; padding: 32px 20px;">
+          <div style="font-family: var(--font-heading); font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 800; color: #FFF; line-height: 1;">
+            <span data-counter-target="0">0</span>
+          </div>
+          <div style="font-family: var(--font-heading); font-size: 0.85rem; font-weight: 700; color: #FFF; text-transform: uppercase; margin-top: 8px;">Hidden Fees</div>
+          <p style="font-size: 0.775rem; color: #8E9290; margin-top: 4px;">Transparent pricing & cancellation</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The 4-Pillar Stackly Method -->
+  <section class="section section-surface">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Our Methodology</span>
+        <h2>THE 4-PILLAR HUMAN PERFORMANCE FRAMEWORK.</h2>
+        <p class="lead">Every workout and program at Stackly is calibrated against four interconnected athletic pillars.</p>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-card">
+          <div>
+            <div class="philosophy-number">01</div>
+            <h3 class="philosophy-title">Progressive Strength</h3>
+            <p class="philosophy-text">
+              Lifting heavy weights through full ranges of motion stimulates neuromuscular recruitment, builds dense connective tissue, and safeguards skeletal health.
+            </p>
+          </div>
+          <div class="philosophy-icon-wrap"><i class="fa-solid fa-dumbbell"></i></div>
+        </div>
+
+        <div class="philosophy-card">
+          <div>
+            <div class="philosophy-number">02</div>
+            <h3 class="philosophy-title">Metabolic Engine</h3>
+            <p class="philosophy-text">
+              Developing all 3 energy systems (phosphagen, glycolytic, and oxidative) through interval conditioning on curved runners, rowers, and assault bikes.
+            </p>
+          </div>
+          <div class="philosophy-icon-wrap"><i class="fa-solid fa-heart-pulse"></i></div>
+        </div>
+
+        <div class="philosophy-card">
+          <div>
+            <div class="philosophy-number">03</div>
+            <h3 class="philosophy-title">Bio-Recovery</h3>
+            <p class="philosophy-text">
+              Utilizing contrast hydrotherapy, dry Finnish saunas, and targeted joint mobilization to down-regulate the sympathetic nervous system.
+            </p>
+          </div>
+          <div class="philosophy-icon-wrap"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaching Standard & Team Preview -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="why-us-grid" style="align-items: center; margin-bottom: clamp(48px, 6vw, 72px);">
+        <div class="why-us-visual">
+          <div class="why-us-image-main" style="aspect-ratio: 16/10;">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80" alt="Trainer assessing athlete technique" loading="lazy">
+          </div>
+        </div>
+
+        <div>
+          <span class="eyebrow">Coaching Integrity</span>
+          <h2>COACHES WHO LIVE BY THE CRAFT.</h2>
+          <p class="lead" style="margin-bottom: 20px;">
+            We do not hire rep-counters. Every coach at Stackly Fitness Club holds an accredited credential (such as CSCS, USAW, or FRC) and completes over 100 hours of mandatory annual continuing education.
+          </p>
+          <ul style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px;">
+            <li style="display: flex; gap: 12px; align-items: flex-start;">
+              <i class="fa-solid fa-circle-check text-accent" style="margin-top: 4px;"></i>
+              <div>
+                <strong style="color: #FFF;">Biomechanical Movement Screening:</strong>
+                <p style="font-size: 0.875rem;">Every member begins with a mobility assessment to identify asymmetries before loading with weight.</p>
+              </div>
+            </li>
+            <li style="display: flex; gap: 12px; align-items: flex-start;">
+              <i class="fa-solid fa-circle-check text-accent" style="margin-top: 4px;"></i>
+              <div>
+                <strong style="color: #FFF;">Scientific Periodization:</strong>
+                <p style="font-size: 0.875rem;">Programming progresses through deliberate hypertrophy, strength, and deload cycles to prevent burnout.</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="trainers.html" class="btn btn-secondary">
+            <span>Explore All Coaches</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Team Preview Grid (Consistent Imagery & Spacing) -->
+      <div style="padding-top: clamp(36px, 5vw, 56px); border-top: 1px solid var(--color-border);">
+        <div class="section-header text-center" style="margin-bottom: 36px;">
+          <span class="eyebrow">Faculty Leadership</span>
+          <h3 style="font-size: 1.8rem;">MEET YOUR PERFORMANCE SPECIALISTS.</h3>
+        </div>
+
+        <div class="trainers-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <!-- Trainer 1 -->
+          <article class="trainer-card">
+            <div class="trainer-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80" alt="Marcus Stone - Head Coach" loading="lazy">
+              <span class="badge badge-lime trainer-cred-badge">CSCS / EXOS</span>
+            </div>
+            <div class="trainer-body">
+              <div>
+                <h4 class="trainer-name">Marcus Stone</h4>
+                <div class="trainer-specialty">Head of Human Performance</div>
+                <p class="trainer-bio">Specialist in sprint acceleration, rate of force production, and HYROX competition periodization.</p>
+              </div>
+              <div class="trainer-footer">
+                <a href="trainers.html#marcus-stone" class="btn btn-ghost btn-sm">View Full Bio <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Trainer 2 -->
+          <article class="trainer-card">
+            <div class="trainer-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80" alt="Elena Rostova - Mobility Specialist" loading="lazy">
+              <span class="badge badge-lime trainer-cred-badge">FRCms / 500-RYT</span>
+            </div>
+            <div class="trainer-body">
+              <div>
+                <h4 class="trainer-name">Elena Rostova</h4>
+                <div class="trainer-specialty">Mobility & Neuromuscular Rehab</div>
+                <p class="trainer-bio">Specialist in joint capsule integrity, spinal decompression, and down-regulating athletic over-training.</p>
+              </div>
+              <div class="trainer-footer">
+                <a href="trainers.html#elena-rostova" class="btn btn-ghost btn-sm">View Full Bio <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Trainer 3 -->
+          <article class="trainer-card">
+            <div class="trainer-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80" alt="Dmitri Volkov - Olympic Coach" loading="lazy">
+              <span class="badge badge-lime trainer-cred-badge">USAW Level 2 / CSCS</span>
+            </div>
+            <div class="trainer-body">
+              <div>
+                <h4 class="trainer-name">Dmitri Volkov</h4>
+                <div class="trainer-specialty">Olympic Weightlifting & Strength</div>
+                <p class="trainer-bio">Former national competitive lifter specializing in snatch mechanics, clean & jerk cycles, and heavy squats.</p>
+              </div>
+              <div class="trainer-footer">
+                <a href="trainers.html#dmitri-volkov" class="btn btn-ghost btn-sm">View Full Bio <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="final-cta-section">
+    <div class="final-cta-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="final-cta-content">
+        <span class="eyebrow">Join the Movement</span>
+        <h2 class="final-cta-title">READY TO EXPERIENCE THE STACKLY STANDARD?</h2>
+        <p class="final-cta-subtitle">
+          Visit our club for a walkthrough and complimentary movement screening session.
+        </p>
+        <div class="final-cta-actions">
+          <a href="membership.html" class="btn btn-primary btn-lg">Explore Memberships</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Schedule a Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB">
+            <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+          </a>
+          <p class="footer-desc">
+            A premium human performance collective engineered for progressive strength training, metabolic conditioning, and complete biological restoration.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-link" aria-label="STACKLY on Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="404.html" class="social-link" aria-label="STACKLY on Spotify"><i class="fa-brands fa-spotify"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Programs (all redirect to 404.html) -->
+        <div>
+          <h4 class="footer-heading">Programs</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link">Strength & Conditioning</a></li>
+            <li><a href="404.html" class="footer-link">Personal Training</a></li>
+            <li><a href="404.html" class="footer-link">Functional Fitness</a></li>
+            <li><a href="404.html" class="footer-link">HIIT & Metabolic Sprints</a></li>
+            <li><a href="404.html" class="footer-link">Yoga & Joint Mobility</a></li>
+            <li><a href="404.html" class="footer-link">Contrast Recovery Suite</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Links -->
+        <div>
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+            <li><a href="classes.html" class="footer-link">Programs</a></li>
+            <li><a href="trainers.html" class="footer-link">Trainers</a></li>
+            <li><a href="membership.html" class="footer-link">Membership</a></li>
+            <li><a href="contact.html" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Club Headquarters -->
+        <div>
+          <h4 class="footer-heading">Club Headquarters</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>MMR Complex, Chinna Thirupathi, Near Chinna Mariamman Kovil, Salem 636008</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span><a href="tel:+919820012345" style="color: inherit;">+91 98200 12345</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span><a href="mailto:info@stacklyfitness.com" style="color: inherit;">info@stacklyfitness.com</a></span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-clock"></i>
+            <span>Mon–Fri: 05:00–23:00<br>Sat–Sun: 06:00–21:00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Newsletter Bar -->
+      <div style="padding: 24px 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div style="font-family: var(--font-heading); font-weight: 700; color: #FFF; text-transform: uppercase;">The Stackly Dispatch</div>
+          <p style="font-size: 0.825rem; color: #8E9290;">Weekly research, biomechanics breakdowns, and training schedules delivered to your inbox.</p>
+        </div>
+        <form class="footer-newsletter-form" id="footerNewsletterForm" novalidate style="display: flex; flex-direction: column; max-width: 420px; width: 100%;">
+          <div style="display: flex; gap: 8px; width: 100%;">
+            <input type="email" name="email" class="form-control" placeholder="Enter your email address" style="padding: 10px 14px; font-size: 0.85rem; flex: 1;">
+            <button type="submit" class="btn btn-primary btn-sm" style="white-space: nowrap;">Subscribe</button>
+          </div>
+          <div class="newsletter-error-msg" style="color: #FF5252; font-size: 0.8rem; margin-top: 6px; display: none; font-weight: 600;"></div>
+        </form>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 STACKLY FITNESS CLUB. All Rights Reserved. Engineered for athletic excellence.
+        </div>
+        <div class="footer-legal-links">
+          <a href="404.html">Privacy Policy</a>
+          <a href="404.html">Terms & Conditions</a>
+          <a href="404.html">Safety Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

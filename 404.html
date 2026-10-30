@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found | STACKLY FITNESS CLUB</title>
+  <meta name="description" content="The page you requested could not be located on our training floor. Return to Stackly Fitness Club.">
+  <meta property="og:title" content="404 — Set Missed | STACKLY FITNESS CLUB">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0B0D0C">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230B0D0C'/%3E%3Cpath d='M4 16h6l3-8 6 16 3-8h6' stroke='%23C6FF00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Space Grotesk & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY FITNESS CLUB">
+        <img src="logo.webp" alt="STACKLY FITNESS CLUB" class="brand-logo-img">
+      </a>
+
+      <nav class="nav-menu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="classes.html" class="nav-link">Programs</a>
+        <a href="trainers.html" class="nav-link">Trainers</a>
+        <a href="membership.html" class="nav-link">Membership</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="login-link">
+          <i class="fa-regular fa-user"></i>
+          <span>Member Login</span>
+        </a>
+        <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 404 Main Area -->
+  <main class="error-page-wrap" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: calc(100vh - var(--header-height));">
+    <div class="container text-center">
+      <div class="error-badge-404">404</div>
+      <span class="eyebrow" style="color: var(--color-accent);">404 ERROR // PAGE NOT FOUND</span>
+      <h1 class="error-title">LOOKS LIKE YOU WANDERED OFF THE TRAINING FLOOR.</h1>
+      <p class="lead error-desc">
+        The barbell rack or session link you were looking for doesn't exist or has been re-racked elsewhere. Let's get you back to the main arena.
+      </p>
+
+      <div class="hero-cta-group" style="justify-content: center;">
+        <a href="index.html" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-house"></i>
+          <span>Back to Home</span>
+        </a>
+        <button type="button" onclick="if(document.referrer && !document.referrer.includes('404')) { history.back(); } else { window.location.href='index.html'; }" class="btn btn-secondary btn-lg" id="btnGoBack" aria-label="Go back to previous page">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Go Back</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
