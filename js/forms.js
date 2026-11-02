@@ -154,22 +154,10 @@
       }
     }
 
-    // In-page select coach buttons
+    // In-page select coach buttons - redirect to 404 page
     document.querySelectorAll('.select-coach-btn').forEach((btn) => {
-      btn.addEventListener('click', function () {
-        const coachName = btn.getAttribute('data-coach');
-        const coachSelect = document.getElementById('ptCoachSelect');
-        if (coachSelect && coachName) {
-          for (let i = 0; i < coachSelect.options.length; i++) {
-            if (coachSelect.options[i].text.toLowerCase().includes(coachName.toLowerCase())) {
-              coachSelect.selectedIndex = i;
-              break;
-            }
-          }
-          if (window.PulseApp?.showToast) {
-            window.PulseApp.showToast(`Selected Coach ${coachName}. Complete the form below to book.`, 'info', 'COACH SELECTED');
-          }
-        }
+      btn.addEventListener('click', function (e) {
+        window.location.href = '404.html';
       });
     });
   }
@@ -352,55 +340,41 @@
 
       const nameInput = document.getElementById('ptName');
       const emailInput = document.getElementById('ptEmail');
-      const coachSelect = document.getElementById('ptCoachSelect');
 
       const name = nameInput ? nameInput.value.trim() : '';
       const email = emailInput ? emailInput.value.trim() : '';
-      const coach = coachSelect ? coachSelect.value : 'Head Coach';
 
       let valid = true;
-      if (!name || name.length < 2) {
-        if (nameInput) nameInput.classList.add('is-invalid');
-        valid = false;
-      } else if (nameInput) {
-        nameInput.classList.remove('is-invalid');
+      if (nameInput) {
+        if (!name || name.length < 2) {
+          valid = validateField(nameInput, false, 'Please enter your full name') && valid;
+        } else {
+          validateField(nameInput, true);
+        }
       }
 
-      if (!email || !validateEmail(email)) {
-        if (emailInput) emailInput.classList.add('is-invalid');
-        valid = false;
-      } else if (emailInput) {
-        emailInput.classList.remove('is-invalid');
+      if (emailInput) {
+        if (!email || !validateEmail(email)) {
+          valid = validateField(emailInput, false, 'Please enter a valid email address') && valid;
+        } else {
+          validateField(emailInput, true);
+        }
       }
+
+      const app = window.StacklyApp || window.PulseApp;
 
       if (!valid) {
-        if (window.PulseApp?.showToast) {
-          window.PulseApp.showToast('Please enter your full name and a valid email address.', 'error', 'VALIDATION ERROR');
+        if (app?.showToast) {
+          app.showToast('Please enter your full name and a valid email address.', 'error', 'VALIDATION ERROR');
         }
         return;
       }
 
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const origText = submitBtn ? submitBtn.innerHTML : '';
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
-      }
-
-      setTimeout(() => {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = origText;
-        }
-
-        window.PulseApp.showToast(
-          `Consultation request submitted! Coach ${coach} has been notified.`,
-          'success',
-          'TRAINER CONSULTATION'
-        );
-
-        form.reset();
-      }, 600);
+      // After filling all details, store section and redirect to 404 page
+      try {
+        sessionStorage.setItem('stackly_last_section_url', 'classes.html#consultation');
+      } catch (err) {}
+      window.location.href = '404.html';
     });
   }
 

@@ -309,8 +309,8 @@
     );
 
     headings.forEach((heading) => {
-      // Exclude headings in hidden modal overlays initially
-      if (heading.closest('.modal-backdrop')) return;
+      // Exclude headings in footer, brand logos, or modal overlays
+      if (heading.closest('.site-footer, .footer-brand, .brand-logo, .modal-backdrop')) return;
 
       heading.setAttribute('data-curtain-init', 'true');
       heading.classList.add('curtain-reveal-heading');
@@ -913,6 +913,7 @@
 
     const headings = container.querySelectorAll('h1, h2, h3, h4, h5, h6');
     headings.forEach((heading) => {
+      if (heading.closest('.site-footer, .footer-brand, .brand-logo, .modal-backdrop')) return;
       if (!heading.getAttribute('data-curtain-init')) {
         heading.setAttribute('data-curtain-init', 'true');
         heading.classList.add('curtain-reveal-heading');

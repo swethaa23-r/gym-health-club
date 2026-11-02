@@ -6,6 +6,8 @@
   display: flex;
   min-height: 100vh;
   background-color: #0A0C0B;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Dashboard Sidebar */
@@ -84,9 +86,16 @@
 .dash-user-avatar {
   width: 44px;
   height: 44px;
+  min-width: 44px;
   border-radius: 50%;
   border: 1.5px solid var(--color-accent);
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.45rem;
+  color: var(--color-accent);
+  background-color: rgba(198, 255, 0, 0.08);
+  flex-shrink: 0;
 }
 
 .dash-user-meta {
@@ -102,7 +111,7 @@
 }
 
 .dash-user-badge {
-  font-size: 0.725rem;
+  font-size: 0.75rem;
   color: var(--color-accent);
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -152,6 +161,18 @@
   flex-wrap: wrap;
   gap: 16px;
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  background-color: #0A0C0B;
+  padding: 16px 0;
+  margin-top: -32px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dash-mobile-spacer {
+  display: none;
 }
 
 .dash-header-left {
@@ -292,7 +313,7 @@
 }
 
 .dash-header-profile-role {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -499,7 +520,7 @@
 }
 
 .session-month {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: var(--color-white);
   letter-spacing: 0.05em;
@@ -535,7 +556,7 @@
   display: block;
 }
 
-/* Mobile Dashboard Toggle */
+/* Mobile Dashboard Toggle & Brand Logo */
 .mobile-dash-nav-toggle {
   display: none;
   background: var(--color-surface-card);
@@ -549,6 +570,107 @@
   cursor: pointer;
   align-items: center;
   gap: 8px;
+}
+
+.dash-mobile-logo {
+  display: none;
+}
+
+/* Dashboard Two Column Grid & Form Row */
+.dash-grid-2col {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.dash-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Dashboard Table Styles */
+.comparison-table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  background-color: var(--color-surface-card);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-accent) #101412;
+}
+
+.comparison-table-wrap::-webkit-scrollbar {
+  height: 6px;
+}
+
+.comparison-table-wrap::-webkit-scrollbar-track {
+  background: #101412;
+}
+
+.comparison-table-wrap::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 4px;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 820px !important;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border);
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  vertical-align: middle;
+  font-size: 0.85rem;
+}
+
+.comparison-table th:last-child,
+.comparison-table td:last-child {
+  min-width: 150px !important;
+  width: 150px !important;
+  text-align: center;
+}
+
+.comparison-table .btn,
+.comparison-table a.btn,
+.comparison-table button.btn {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+  min-width: 120px !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 8px 16px !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.04em !important;
+}
+
+.comparison-table th {
+  background-color: #121514;
+  font-family: var(--font-heading);
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-white);
+  letter-spacing: 0.05em;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 /* Responsive Dashboard */
@@ -567,8 +689,97 @@
     max-width: 100%;
   }
 
+  /* In mobile view: Header is FIXED at top, with 3 lines on left, LOGO IN CENTER, spacer on right */
+  .dash-header-top {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 95 !important;
+    background-color: #0A0C0B !important;
+    background-color: rgba(10, 12, 11, 0.98) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    padding: 12px 16px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    margin-top: -16px !important;
+    margin-bottom: 16px !important;
+    width: calc(100% + 32px) !important;
+    border-bottom: 1px solid var(--color-border) !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  .dash-header-left {
+    display: grid !important;
+    grid-template-columns: 42px 1fr 42px !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
   .mobile-dash-nav-toggle {
-    display: flex;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    font-size: 1.15rem;
+    border-radius: var(--radius-xs);
+    background: var(--color-surface-card);
+    border: 1px solid var(--color-border);
+    color: var(--color-white);
+    cursor: pointer;
+    justify-self: start;
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+  }
+
+  .mobile-dash-nav-toggle:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .mobile-dash-nav-toggle span {
+    display: none !important;
+  }
+
+  .dash-mobile-logo {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1;
+    margin: 0 auto;
+    flex-shrink: 0;
+  }
+
+  .dash-mobile-logo .brand-logo-img {
+    height: 32px;
+    width: auto;
+    max-width: 135px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .dash-mobile-spacer {
+    display: block !important;
+    width: 42px;
+    height: 42px;
+    justify-self: end;
+  }
+
+  /* Hide Search and Profile in mobile header bar as requested */
+  .dash-header-search {
+    display: none !important;
+  }
+
+  .dash-header-right {
+    display: none !important;
   }
 
   .dash-stats-grid {
@@ -578,76 +789,104 @@
   .dash-content-grid {
     grid-template-columns: 1fr;
   }
+
+  .dash-grid-2col {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
 
-@media (max-width: 600px) {
-  .dash-main {
-    padding: 20px 12px;
-  }
-
-  .dash-header {
+@media (max-width: 768px) {
+  .dash-header-bottom {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
+    gap: 14px;
+    margin-top: 14px;
   }
 
-  .dash-header-top {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
+  .dash-welcome-title {
+    font-size: clamp(1.3rem, 4.5vw, 1.75rem);
+    word-break: break-word;
   }
 
-  .dash-header-left {
-    max-width: 100%;
-    min-width: 0;
-    width: 100%;
-  }
-
-  .dash-header-right {
-    width: 100%;
-    justify-content: space-between;
-    margin-left: 0;
+  .dash-welcome-subtitle {
+    font-size: 0.85rem;
   }
 
   .dash-header-actions {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 8px;
   }
 
   .dash-header-actions .btn {
-    flex: 1 1 auto;
-    font-size: 0.75rem;
-    padding: 8px 10px;
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 10px 14px;
     justify-content: center;
-    min-height: 40px;
+    min-height: 42px;
+  }
+
+  .dash-form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dash-main {
+    padding: 16px 12px;
+  }
+
+  .dash-header {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
   }
 
   .dash-panel {
     padding: 16px 12px;
   }
 
+  .dash-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .dash-panel-header .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
   .dash-chart-container {
     gap: 4px;
+    height: 180px;
   }
 
   .chart-bar-track {
-    max-width: 22px;
+    max-width: 20px;
   }
 
   .chart-bar-label {
-    font-size: 0.65rem;
+    font-size: 0.75rem;
   }
 
   .dash-stats-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .booked-session-item {
     flex-direction: column;
     align-items: flex-start;
+    gap: 12px;
+  }
+
+  .booked-session-actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
 }

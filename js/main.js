@@ -595,7 +595,78 @@
   }
 
   /* --------------------------------------------------------------------------
-     10. DOM Ready Initializer
+     11. 404 Navigation Section Tracker
+     -------------------------------------------------------------------------- */
+  function init404NavigationTracking() {
+    // Continuously capture current URL + active hash/section before navigating to 404
+    document.addEventListener('click', function (e) {
+      const el = e.target.closest('a, button');
+      if (!el) return;
+
+      const href = el.getAttribute('href') || '';
+      const is404Target = href.includes('404.html') ||
+                          el.classList.contains('btn-book-class') ||
+                          el.classList.contains('btn-waitlist-class') ||
+                          el.classList.contains('select-coach-btn');
+
+      if (is404Target) {
+        // Find closest identifiable section or fallback to window.location.hash
+        const section = el.closest('section[id], div[id], [id]');
+        let sectionId = '';
+        if (section && section.id && !['main', 'root', 'app', 'themeToggle'].includes(section.id)) {
+          sectionId = '#' + section.id;
+        } else if (window.location.hash) {
+          sectionId = window.location.hash;
+        }
+
+        const pageFile = window.location.pathname.split('/').pop() || 'index.html';
+        const targetUrl = pageFile + sectionId;
+        try {
+          sessionStorage.setItem('stackly_last_section_url', targetUrl);
+        } catch (err) {}
+      }
+    }, true);
+
+    // Smooth scroll to target section if returning via hash
+    if (window.location.hash) {
+      setTimeout(() => {
+        try {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        } catch (err) {}
+      }, 150);
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     10. Contact, Mail & Phone Redirections to 404
+     -------------------------------------------------------------------------- */
+  function initContactLinksTo404() {
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href') || '';
+      const text = (link.textContent || '').trim().toLowerCase();
+
+      if (
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        href.includes('maps.google') ||
+        href.includes('google.com/maps') ||
+        text.includes('+91 98200') ||
+        text.includes('info@stacklyfitness.com')
+      ) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.location.href = '404.html';
+      }
+    }, true);
+  }
+
+  /* --------------------------------------------------------------------------
+     11. DOM Ready Initializer
      -------------------------------------------------------------------------- */
   document.addEventListener('DOMContentLoaded', function () {
     initHeader();
@@ -608,5 +679,7 @@
     initTrainerFilter();
     initSocialMediaRedirects();
     initProgramsSubnav();
+    init404NavigationTracking();
+    initContactLinksTo404();
   });
 })();

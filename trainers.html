@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coaches & Trainers — PULSE FITNESS CLUB</title>
-  <meta name="description" content="Meet our certified coaching staff: CSCS strength coaches, Olympic weightlifting specialists, and physical restoration experts at Pulse Fitness Club.">
-  <meta property="og:title" content="Coaches & Trainers — PULSE FITNESS CLUB">
+  <title>Coaches & Trainers — STACKLY FITNESS CLUB</title>
+  <meta name="description" content="Meet our certified coaching staff: CSCS strength coaches, Olympic weightlifting specialists, and physical restoration experts at Stackly Fitness Club.">
+  <meta property="og:title" content="Coaches & Trainers — STACKLY FITNESS CLUB">
   <meta property="og:description" content="Elite sports coaching with certified credentials, science-backed periodization, and zero guesswork.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#0B0D0C">
@@ -41,25 +41,7 @@
         <a href="index.html" class="nav-link">Home</a>
         <a href="about.html" class="nav-link">About</a>
         
-        <div class="nav-item-dropdown">
-          <a href="classes.html" class="nav-link nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-            Programs <i class="fa-solid fa-chevron-down"></i>
-          </a>
-          <div class="nav-dropdown-menu" role="menu">
-            <a href="classes.html#group-classes" class="dropdown-link" role="menuitem">
-              <span class="dropdown-link-title">Group Classes <i class="fa-solid fa-arrow-right"></i></span>
-              <span class="dropdown-link-desc">HIIT, Hyrox, mobility & strength camps</span>
-            </a>
-            <a href="classes.html#personal-training" class="dropdown-link" role="menuitem">
-              <span class="dropdown-link-title">Personal Training <i class="fa-solid fa-arrow-right"></i></span>
-              <span class="dropdown-link-desc">1-on-1 coaching & tailored biomechanics</span>
-            </a>
-            <a href="classes.html#facilities-recovery" class="dropdown-link" role="menuitem">
-              <span class="dropdown-link-title">Facilities & Recovery <i class="fa-solid fa-arrow-right"></i></span>
-              <span class="dropdown-link-desc">Hydrotherapy, saunas & open turf zones</span>
-            </a>
-          </div>
-        </div>
+        <a href="classes.html" class="nav-link">Programs</a>
 
         <a href="trainers.html" class="nav-link active">Trainers</a>
         <a href="membership.html" class="nav-link">Membership</a>
@@ -67,11 +49,10 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="login.html" class="login-link">
+        <a href="login.html" class="btn btn-primary btn-sm">
           <i class="fa-regular fa-user"></i>
           <span>Member Login</span>
         </a>
-        <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
 
         <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
           <span></span>
@@ -126,7 +107,7 @@
         <span class="eyebrow">Human Performance Faculty</span>
         <h1 class="page-hero-title">COACHES DEDICATED TO YOUR <span class="text-accent">ASCENT</span>.</h1>
         <p class="page-hero-subtitle">
-          Every coach at Pulse Fitness Club holds collegiate or international performance credentials. We measure success by your technical safety, athletic durability, and personal records.
+          Every coach at Stackly Fitness Club holds collegiate or international performance credentials. We measure success by your technical safety, athletic durability, and personal records.
         </p>
 
         <!-- Search and Category Filters -->
@@ -162,10 +143,10 @@
     </div>
   </div>
 
-  <!-- Trainers Directory Grid -->
-  <section class="section section-dark">
+  <!-- Trainers Directory Grid (6 Boxes: 1st line 3, 2nd line 3) -->
+  <section class="section section-dark" id="trainers-list">
     <div class="container">
-      <div class="trainers-grid" id="trainersDirectory">
+      <div class="trainers-grid trainers-grid-3col" id="trainersDirectory">
         <!-- Trainer 1 -->
         <article class="trainer-card" id="marcus-stone" data-specialty="conditioning">
           <div class="trainer-photo-wrap btn-view-trainer-bio" style="cursor: pointer;"
@@ -189,20 +170,25 @@
                 <i class="fa-solid fa-graduation-cap text-accent"></i> M.Sc. Exercise Physiology
               </div>
             </div>
-            <div class="trainer-footer" style="display: flex; gap: 8px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
-                      data-name="Marcus Stone"
-                      data-spec="Head of Human Performance"
-                      data-cred="CSCS / EXOS Certified"
-                      data-img="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80"
-                      data-bio="10+ years coaching collegiate sprinters and HYROX competitors. Specialist in rate of force development (RFD), sprint mechanics, and metabolic conditioning."
-                      data-edu="M.Sc. Exercise Physiology"
-                      data-exp="10+ Years Elite Coaching"
-                      data-coach-param="Marcus Stone">
-                <i class="fa-solid fa-user"></i> View Bio
-              </button>
-              <a href="training.html?coach=Marcus%20Stone" class="btn btn-primary btn-sm" style="flex: 1;">
-                Consult <i class="fa-solid fa-arrow-right"></i>
+            <div class="trainer-footer">
+              <div class="trainer-btn-row">
+                <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio"
+                        data-name="Marcus Stone"
+                        data-spec="Head of Human Performance"
+                        data-cred="CSCS / EXOS Certified"
+                        data-img="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=80"
+                        data-bio="10+ years coaching collegiate sprinters and HYROX competitors. Specialist in rate of force development (RFD), sprint mechanics, and metabolic conditioning."
+                        data-edu="M.Sc. Exercise Physiology"
+                        data-exp="10+ Years Elite Coaching"
+                        data-coach-param="Marcus Stone">
+                  <i class="fa-solid fa-user"></i> View Bio
+                </button>
+                <a href="classes.html?coach=Marcus%20Stone#consultation" class="btn btn-primary btn-sm">
+                  Consult <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm btn-full-bio">
+                <i class="fa-solid fa-id-card"></i> View Full Bio
               </a>
             </div>
           </div>
@@ -231,20 +217,25 @@
                 <i class="fa-solid fa-graduation-cap text-accent"></i> B.S. Kinesiology & Biomechanics
               </div>
             </div>
-            <div class="trainer-footer" style="display: flex; gap: 8px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
-                      data-name="Elena Rostova"
-                      data-spec="Mobility & Neuromuscular Rehab"
-                      data-cred="FRCms / 500-RYT"
-                      data-img="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80"
-                      data-bio="Specialist in Functional Range Conditioning (FRC), controlled articular rotations (CARs), spine decompression, and down-regulating athletic over-training."
-                      data-edu="B.S. Kinesiology & Biomechanics"
-                      data-exp="8+ Years Mobility Specialization"
-                      data-coach-param="Elena Rostova">
-                <i class="fa-solid fa-user"></i> View Bio
-              </button>
-              <a href="training.html?coach=Elena%20Rostova" class="btn btn-primary btn-sm" style="flex: 1;">
-                Consult <i class="fa-solid fa-arrow-right"></i>
+            <div class="trainer-footer">
+              <div class="trainer-btn-row">
+                <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio"
+                        data-name="Elena Rostova"
+                        data-spec="Mobility & Neuromuscular Rehab"
+                        data-cred="FRCms / 500-RYT"
+                        data-img="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=80"
+                        data-bio="Specialist in Functional Range Conditioning (FRC), controlled articular rotations (CARs), spine decompression, and down-regulating athletic over-training."
+                        data-edu="B.S. Kinesiology & Biomechanics"
+                        data-exp="8+ Years Mobility Specialization"
+                        data-coach-param="Elena Rostova">
+                  <i class="fa-solid fa-user"></i> View Bio
+                </button>
+                <a href="classes.html?coach=Elena%20Rostova#consultation" class="btn btn-primary btn-sm">
+                  Consult <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm btn-full-bio">
+                <i class="fa-solid fa-id-card"></i> View Full Bio
               </a>
             </div>
           </div>
@@ -273,20 +264,25 @@
                 <i class="fa-solid fa-graduation-cap text-accent"></i> 12 Years Barbell Coaching
               </div>
             </div>
-            <div class="trainer-footer" style="display: flex; gap: 8px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
-                      data-name="Dmitri Volkov"
-                      data-spec="Olympic Weightlifting & Strength"
-                      data-cred="USAW Level 2 / CSCS"
-                      data-img="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80"
-                      data-bio="Former national competitive lifter specializing in barbell trajectory, snatch turnover, clean & jerk cycles, and safe heavy back squat periodization."
-                      data-edu="12 Years Barbell Coaching"
-                      data-exp="USAW Level 2 Lead Coach"
-                      data-coach-param="Dmitri Volkov">
-                <i class="fa-solid fa-user"></i> View Bio
-              </button>
-              <a href="training.html?coach=Dmitri%20Volkov" class="btn btn-primary btn-sm" style="flex: 1;">
-                Consult <i class="fa-solid fa-arrow-right"></i>
+            <div class="trainer-footer">
+              <div class="trainer-btn-row">
+                <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio"
+                        data-name="Dmitri Volkov"
+                        data-spec="Olympic Weightlifting & Strength"
+                        data-cred="USAW Level 2 / CSCS"
+                        data-img="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=700&q=80"
+                        data-bio="Former national competitive lifter specializing in barbell trajectory, snatch turnover, clean & jerk cycles, and safe heavy back squat periodization."
+                        data-edu="12 Years Barbell Coaching"
+                        data-exp="USAW Level 2 Lead Coach"
+                        data-coach-param="Dmitri Volkov">
+                  <i class="fa-solid fa-user"></i> View Bio
+                </button>
+                <a href="classes.html?coach=Dmitri%20Volkov#consultation" class="btn btn-primary btn-sm">
+                  Consult <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm btn-full-bio">
+                <i class="fa-solid fa-id-card"></i> View Full Bio
               </a>
             </div>
           </div>
@@ -315,20 +311,25 @@
                 <i class="fa-solid fa-graduation-cap text-accent"></i> Precision Nutrition Level 2
               </div>
             </div>
-            <div class="trainer-footer" style="display: flex; gap: 8px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
-                      data-name="Sarah Jenkins"
-                      data-spec="Metabolic Engine & Body Re-comp"
-                      data-cred="NASM-CPT / Precision Nut."
-                      data-img="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
-                      data-bio="Passionate conditioning coach focusing on high-tempo functional squad circuits, kettlebell efficiency, and sustainable macronutrient fueling systems."
-                      data-edu="Precision Nutrition Level 2"
-                      data-exp="7+ Years High-Performance Coaching"
-                      data-coach-param="Sarah Jenkins">
-                <i class="fa-solid fa-user"></i> View Bio
-              </button>
-              <a href="training.html?coach=Sarah%20Jenkins" class="btn btn-primary btn-sm" style="flex: 1;">
-                Consult <i class="fa-solid fa-arrow-right"></i>
+            <div class="trainer-footer">
+              <div class="trainer-btn-row">
+                <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio"
+                        data-name="Sarah Jenkins"
+                        data-spec="Metabolic Engine & Body Re-comp"
+                        data-cred="NASM-CPT / Precision Nut."
+                        data-img="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80"
+                        data-bio="Passionate conditioning coach focusing on high-tempo functional squad circuits, kettlebell efficiency, and sustainable macronutrient fueling systems."
+                        data-edu="Precision Nutrition Level 2"
+                        data-exp="7+ Years High-Performance Coaching"
+                        data-coach-param="Sarah Jenkins">
+                  <i class="fa-solid fa-user"></i> View Bio
+                </button>
+                <a href="classes.html?coach=Sarah%20Jenkins#consultation" class="btn btn-primary btn-sm">
+                  Consult <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm btn-full-bio">
+                <i class="fa-solid fa-id-card"></i> View Full Bio
               </a>
             </div>
           </div>
@@ -357,20 +358,25 @@
                 <i class="fa-solid fa-graduation-cap text-accent"></i> 9 Years Fight Camp Coaching
               </div>
             </div>
-            <div class="trainer-footer" style="display: flex; gap: 8px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
-                      data-name="Tariq Vance"
-                      data-spec="Striking & Combat Conditioning"
-                      data-cred="Golden Gloves / NASM-PES"
-                      data-img="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
-                      data-bio="Professional boxing and kickboxing coach teaching authentic pad work, rotational core kinetics, high-speed evasion, and anaerobic endurance."
-                      data-edu="9 Years Fight Camp Coaching"
-                      data-exp="NASM Performance Enhancement Specialist"
-                      data-coach-param="Tariq Vance">
-                <i class="fa-solid fa-user"></i> View Bio
-              </button>
-              <a href="training.html?coach=Tariq%20Vance" class="btn btn-primary btn-sm" style="flex: 1;">
-                Consult <i class="fa-solid fa-arrow-right"></i>
+            <div class="trainer-footer">
+              <div class="trainer-btn-row">
+                <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio"
+                        data-name="Tariq Vance"
+                        data-spec="Striking & Combat Conditioning"
+                        data-cred="Golden Gloves / NASM-PES"
+                        data-img="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+                        data-bio="Professional boxing and kickboxing coach teaching authentic pad work, rotational core kinetics, high-speed evasion, and anaerobic endurance."
+                        data-edu="9 Years Fight Camp Coaching"
+                        data-exp="NASM Performance Enhancement Specialist"
+                        data-coach-param="Tariq Vance">
+                  <i class="fa-solid fa-user"></i> View Bio
+                </button>
+                <a href="classes.html?coach=Tariq%20Vance#consultation" class="btn btn-primary btn-sm">
+                  Consult <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm btn-full-bio">
+                <i class="fa-solid fa-id-card"></i> View Full Bio
               </a>
             </div>
           </div>
@@ -399,20 +405,25 @@
                 <i class="fa-solid fa-graduation-cap text-accent"></i> B.S. Sports Science
               </div>
             </div>
-            <div class="trainer-footer" style="display: flex; gap: 8px;">
-              <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio" style="flex: 1;"
-                      data-name="Ananya Sen"
-                      data-spec="Powerlifting & Hypertrophy"
-                      data-cred="IPF Certified / CSCS"
-                      data-img="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80"
-                      data-bio="National record-holding powerlifter specializing in female athletic performance, deadlift leverage mechanics, and intelligent recovery protocols."
-                      data-edu="B.S. Sports Science"
-                      data-exp="IPF Certified National Powerlifting Coach"
-                      data-coach-param="Ananya Sen">
-                <i class="fa-solid fa-user"></i> View Bio
-              </button>
-              <a href="training.html?coach=Ananya%20Sen" class="btn btn-primary btn-sm" style="flex: 1;">
-                Consult <i class="fa-solid fa-arrow-right"></i>
+            <div class="trainer-footer">
+              <div class="trainer-btn-row">
+                <button type="button" class="btn btn-secondary btn-sm btn-view-trainer-bio"
+                        data-name="Ananya Sen"
+                        data-spec="Powerlifting & Hypertrophy"
+                        data-cred="IPF Certified / CSCS"
+                        data-img="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=700&q=80"
+                        data-bio="National record-holding powerlifter specializing in female athletic performance, deadlift leverage mechanics, and intelligent recovery protocols."
+                        data-edu="B.S. Sports Science"
+                        data-exp="IPF Certified National Powerlifting Coach"
+                        data-coach-param="Ananya Sen">
+                  <i class="fa-solid fa-user"></i> View Bio
+                </button>
+                <a href="classes.html?coach=Ananya%20Sen#consultation" class="btn btn-primary btn-sm">
+                  Consult <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+              <a href="404.html" class="btn btn-ghost btn-sm btn-full-bio">
+                <i class="fa-solid fa-id-card"></i> View Full Bio
               </a>
             </div>
           </div>
@@ -423,11 +434,212 @@
     </div>
   </section>
 
+  <!-- =========================================================================
+       New Section 1: Coaching Philosophy & The Stackly Standard
+       ========================================================================= -->
+  <section class="section section-surface" id="coaching-standards" aria-label="Coaching Standards">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Evidence-Based Mentorship</span>
+        <h2>THE 4 PILLARS OF OUR COACHING SYSTEM.</h2>
+        <p class="lead">
+          We reject generic, one-size-fits-all fitness routines. Every athlete at Stackly trains under structured sports science, kinetic velocity metrics, and individualized biological recovery.
+        </p>
+      </div>
+
+      <div class="coaching-pillars-grid">
+        <div class="card" style="padding: 32px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-xs); background: rgba(198, 255, 0, 0.08); border: 1px solid rgba(198, 255, 0, 0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <i class="fa-solid fa-arrows-split-up-and-left text-accent" style="font-size: 1.4rem;"></i>
+            </div>
+            <h3 style="font-size: 1.2rem; color: #FFF; margin-bottom: 12px;">Kinetic & Movement Audits</h3>
+            <p style="font-size: 0.875rem; color: #A8ADA5; line-height: 1.6;">
+              Zero guesswork. We begin with multi-planar movement assessments to identify joint limitations and structural imbalances before applying heavy barbell loads.
+            </p>
+          </div>
+          <div style="margin-top: 20px; font-size: 0.75rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
+            <i class="fa-solid fa-check"></i> 100% Individualized
+          </div>
+        </div>
+
+        <div class="card" style="padding: 32px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-xs); background: rgba(198, 255, 0, 0.08); border: 1px solid rgba(198, 255, 0, 0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <i class="fa-solid fa-chart-line text-accent" style="font-size: 1.4rem;"></i>
+            </div>
+            <h3 style="font-size: 1.2rem; color: #FFF; margin-bottom: 12px;">Periodized Mesocycles</h3>
+            <p style="font-size: 0.875rem; color: #A8ADA5; line-height: 1.6;">
+              Periodized 4- to 12-week progressive overload blocks engineered to enhance power, hypertrophy, and VO2 max while eliminating performance plateaus.
+            </p>
+          </div>
+          <div style="margin-top: 20px; font-size: 0.75rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
+            <i class="fa-solid fa-check"></i> Progressive Overload
+          </div>
+        </div>
+
+        <div class="card" style="padding: 32px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-xs); background: rgba(198, 255, 0, 0.08); border: 1px solid rgba(198, 255, 0, 0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <i class="fa-solid fa-heart-pulse text-accent" style="font-size: 1.4rem;"></i>
+            </div>
+            <h3 style="font-size: 1.2rem; color: #FFF; margin-bottom: 12px;">Bio-Recovery Tracking</h3>
+            <p style="font-size: 0.875rem; color: #A8ADA5; line-height: 1.6;">
+              Coaches monitor InBody body composition trends and neuromuscular fatigue to regulate training volume and prescribe cold plunge protocols.
+            </p>
+          </div>
+          <div style="margin-top: 20px; font-size: 0.75rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
+            <i class="fa-solid fa-check"></i> Neural Restoration
+          </div>
+        </div>
+
+        <div class="card" style="padding: 32px 24px; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="width: 52px; height: 52px; border-radius: var(--radius-xs); background: rgba(198, 255, 0, 0.08); border: 1px solid rgba(198, 255, 0, 0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <i class="fa-solid fa-shield-halved text-accent" style="font-size: 1.4rem;"></i>
+            </div>
+            <h3 style="font-size: 1.2rem; color: #FFF; margin-bottom: 12px;">Decade Longevity</h3>
+            <p style="font-size: 0.875rem; color: #A8ADA5; line-height: 1.6;">
+              Ruthless technical correction on competition Eleiko platforms. We coach joint capsule integrity and safe spine mechanics so you lift strong for life.
+            </p>
+          </div>
+          <div style="margin-top: 20px; font-size: 0.75rem; color: var(--color-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;">
+            <i class="fa-solid fa-check"></i> Injury Mitigation
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       New Section 2: 1-on-1 Athlete Roadmap (The Process)
+       ========================================================================= -->
+  <section class="section section-dark" id="coaching-roadmap" aria-label="Athlete Transformation Roadmap">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Structured Pathway</span>
+        <h2>THE 4-STAGE ATHLETE ROADMAP.</h2>
+        <p class="lead">From day-one diagnostics to milestone breakthroughs, see exactly how your private mentorship unfolds.</p>
+      </div>
+
+      <div class="coaching-roadmap-grid">
+        <div class="card" style="padding: 28px 20px; position: relative; border-top: 3px solid var(--color-accent);">
+          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: rgba(198, 255, 0, 0.2); position: absolute; right: 16px; top: 16px;">01</div>
+          <span class="badge badge-outline-lime" style="font-size: 0.75rem; margin-bottom: 16px;">STAGE 01 // DAY 1-7</span>
+          <h3 style="font-size: 1.15rem; color: #FFF; margin-bottom: 10px;">Kinetic Assessment</h3>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            In-depth InBody 770 composition scan, joint mobility screening, and movement capacity audit with your matched coach specialist.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 28px 20px; position: relative; border-top: 3px solid var(--color-accent);">
+          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: rgba(198, 255, 0, 0.2); position: absolute; right: 16px; top: 16px;">02</div>
+          <span class="badge badge-outline-lime" style="font-size: 0.75rem; margin-bottom: 16px;">STAGE 02 // WEEKS 2-4</span>
+          <h3 style="font-size: 1.15rem; color: #FFF; margin-bottom: 10px;">Program Architecture</h3>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Creation of your periodized 8- to 12-week protocol, target velocity thresholds, customized warm-ups, and bespoke macro nutrition guidelines.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 28px 20px; position: relative; border-top: 3px solid var(--color-accent);">
+          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: rgba(198, 255, 0, 0.2); position: absolute; right: 16px; top: 16px;">03</div>
+          <span class="badge badge-outline-lime" style="font-size: 0.75rem; margin-bottom: 16px;">STAGE 03 // WEEKS 5-10</span>
+          <h3 style="font-size: 1.15rem; color: #FFF; margin-bottom: 10px;">Execution & Mastery</h3>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Dedicated 1-on-1 coaching on competition platforms with immediate velocity correction, biomechanical cues, and weekly volume tracking.
+          </p>
+        </div>
+
+        <div class="card" style="padding: 28px 20px; position: relative; border-top: 3px solid var(--color-accent);">
+          <div style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: rgba(198, 255, 0, 0.2); position: absolute; right: 16px; top: 16px;">04</div>
+          <span class="badge badge-outline-lime" style="font-size: 0.75rem; margin-bottom: 16px;">STAGE 04 // WEEK 12+</span>
+          <h3 style="font-size: 1.15rem; color: #FFF; margin-bottom: 10px;">Re-Testing & Ascent</h3>
+          <p style="font-size: 0.85rem; color: #A8ADA5; line-height: 1.5;">
+            Repeat InBody composition scan, 1RM testing, performance review, and mesocycle calibration for your next athletic training block.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       New Section 3: Coaching Mentorship FAQ & Consultation CTA
+       ========================================================================= -->
+  <section class="section section-surface" id="coaching-faq" aria-label="Coaching FAQ">
+    <div class="container container-narrow">
+      <div class="section-header text-center">
+        <span class="eyebrow">Everything You Need To Know</span>
+        <h2>COACHING MENTORSHIP FAQ.</h2>
+        <p class="lead">Answers to common questions regarding coach matching, session rescheduling, and custom packages.</p>
+      </div>
+
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">How is a coach matched to my athletic targets?</span>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-content">
+            <p>During your initial consultation and movement screening, our Head of Human Performance reviews your sports history, lifting experience, and biomechanics to pair you with the coach whose specialty aligns perfectly with your goals.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">Can I train across multiple disciplines (e.g., Strength + Mobility)?</span>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-content">
+            <p>Yes. Our faculty collaborates as an integrated unit. You can structure hybrid mesocycles combining Olympic weightlifting with Coach Dmitri and functional range mobility with Coach Elena.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">What is your session cancellation and rescheduling policy?</span>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-content">
+            <p>We respect your schedule and our trainers' preparation. Private sessions can be rescheduled with up to 12 hours advance notice via your Stackly member dashboard with zero forfeiture of your session credit.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header" aria-expanded="false">
+            <span class="accordion-title">Are nutrition plans and recovery protocols included?</span>
+            <div class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </button>
+          <div class="accordion-content">
+            <p>Yes. All dedicated 1-on-1 coaching packages include bespoke macronutrient planning by Precision Nutrition specialists, plus full access to our contrast hydrotherapy and cold plunge recovery suite.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- High-Performance Coach CTA Banner -->
+      <div class="contact-form-panel" style="margin-top: 48px; text-align: center; padding: 48px 32px; background: linear-gradient(135deg, rgba(20,24,22,0.95), rgba(11,13,12,0.95)); border: 1px solid var(--color-border-accent);">
+        <span class="badge badge-lime" style="margin-bottom: 12px;">DIRECT COACH MENTORSHIP</span>
+        <h3 style="font-size: 1.8rem; margin-bottom: 12px; color: #FFF;">READY TO ELEVATE YOUR PERFORMANCE?</h3>
+        <p style="color: #A8ADA5; max-width: 580px; margin: 0 auto 28px; font-size: 0.95rem; line-height: 1.6;">
+          Take the first step towards your personal records. Schedule your complimentary 1-on-1 kinetic movement screening with our accredited coaching faculty.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="classes.html#consultation" class="btn btn-primary btn-lg">
+            <span>Request Coach Consultation</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="membership.html" class="btn btn-secondary btn-lg">
+            <span>Explore Memberships</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Modal: Trainer Detail Profile Modal -->
   <div class="modal-backdrop" id="trainerDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalTrainerName">
     <div class="modal-dialog" style="max-width: 680px;">
       <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
-      <div style="display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: flex-start;" class="why-us-pillars">
+      <div class="modal-trainer-profile-grid">
         <div style="border-radius: var(--radius-xs); overflow: hidden; border: 1px solid var(--color-border); aspect-ratio: 4/5;">
           <img id="modalTrainerImg" src="" alt="Coach photo" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
@@ -440,7 +652,7 @@
             <div><strong style="color: #FFF;">Education:</strong> <span id="modalTrainerEdu"></span></div>
             <div style="margin-top: 4px;"><strong style="color: #FFF;">Experience:</strong> <span id="modalTrainerExp"></span></div>
           </div>
-          <a href="training.html" id="modalTrainerCta" class="btn btn-primary btn-block">
+          <a href="classes.html#personal-training" id="modalTrainerCta" class="btn btn-primary btn-block">
             <span>Request 1-on-1 Consultation</span>
             <i class="fa-solid fa-arrow-right"></i>
           </a>
@@ -471,16 +683,16 @@
           </div>
         </div>
 
-        <!-- Col 2: Programs (all redirect to 404.html) -->
+        <!-- Col 2: Programs -->
         <div>
           <h4 class="footer-heading">Programs</h4>
           <ul class="footer-links">
-            <li><a href="404.html" class="footer-link">Strength & Conditioning</a></li>
-            <li><a href="404.html" class="footer-link">Personal Training</a></li>
-            <li><a href="404.html" class="footer-link">Functional Fitness</a></li>
-            <li><a href="404.html" class="footer-link">HIIT & Metabolic Sprints</a></li>
-            <li><a href="404.html" class="footer-link">Yoga & Joint Mobility</a></li>
-            <li><a href="404.html" class="footer-link">Contrast Recovery Suite</a></li>
+            <li><a href="classes.html#group-classes" class="footer-link">Strength & Conditioning</a></li>
+            <li><a href="classes.html#personal-training" class="footer-link">Personal Training</a></li>
+            <li><a href="classes.html#group-classes" class="footer-link">Functional Fitness</a></li>
+            <li><a href="classes.html#group-classes" class="footer-link">HIIT & Metabolic Sprints</a></li>
+            <li><a href="classes.html#group-classes" class="footer-link">Yoga & Joint Mobility</a></li>
+            <li><a href="classes.html#facilities-recovery" class="footer-link">Contrast Recovery Suite</a></li>
           </ul>
         </div>
 
@@ -506,11 +718,11 @@
           </div>
           <div class="footer-contact-item">
             <i class="fa-solid fa-phone"></i>
-            <span><a href="tel:+919820012345" style="color: inherit;">+91 98200 12345</a></span>
+            <span><a href="404.html" style="color: inherit;">+91 98200 12345</a></span>
           </div>
           <div class="footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
-            <span><a href="mailto:info@stacklyfitness.com" style="color: inherit;">info@stacklyfitness.com</a></span>
+            <span><a href="404.html" style="color: inherit;">info@stacklyfitness.com</a></span>
           </div>
           <div class="footer-contact-item">
             <i class="fa-solid fa-clock"></i>
@@ -520,7 +732,7 @@
       </div>
 
       <!-- Newsletter Bar -->
-      <div style="padding: 24px 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+      <div class="footer-newsletter-bar" style="padding: 24px 0; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
         <div>
           <div style="font-family: var(--font-heading); font-weight: 700; color: #FFF; text-transform: uppercase;">The Stackly Dispatch</div>
           <p style="font-size: 0.825rem; color: #8E9290;">Weekly research, biomechanics breakdowns, and training schedules delivered to your inbox.</p>
@@ -591,37 +803,6 @@
     if (searchInput) {
       searchInput.addEventListener('input', applyTrainerFilters);
     }
-
-    // Modal popup on card click
-    trainerCards.forEach(card => {
-      const name = card.querySelector('.trainer-name')?.textContent || '';
-      const cred = card.querySelector('.trainer-cred-badge')?.textContent || '';
-      const spec = card.querySelector('.trainer-specialty')?.textContent || '';
-      const bio = card.querySelector('.trainer-bio')?.textContent || '';
-      const imgSrc = card.querySelector('.trainer-photo-wrap img')?.src || '';
-
-      const detailBtn = document.createElement('button');
-      detailBtn.type = 'button';
-      detailBtn.className = 'btn btn-ghost btn-sm';
-      detailBtn.style.marginTop = '6px';
-      detailBtn.style.width = '100%';
-      detailBtn.innerHTML = '<i class="fa-solid fa-id-card"></i> View Full Bio';
-      detailBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('modalTrainerName').textContent = name;
-        document.getElementById('modalTrainerCred').textContent = cred;
-        document.getElementById('modalTrainerSpec').textContent = spec;
-        document.getElementById('modalTrainerBio').textContent = bio;
-        document.getElementById('modalTrainerImg').src = imgSrc;
-        document.getElementById('modalTrainerEdu').textContent = card.querySelector('.fa-graduation-cap')?.parentElement?.textContent.trim() || 'Accredited Sports Science';
-        document.getElementById('modalTrainerExp').textContent = 'Verified Coach at Pulse Athletic Club';
-        document.getElementById('modalTrainerCta').href = 'training.html?coach=' + encodeURIComponent(name);
-
-        window.PulseApp.openModal('trainerDetailModal');
-      });
-
-      card.querySelector('.trainer-footer')?.appendChild(detailBtn);
-    });
   </script>
 </body>
 </html>

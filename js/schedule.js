@@ -119,15 +119,15 @@
         </div>
         <div class="schedule-action">
           ${isFull ? `
-            <button class="btn btn-secondary btn-sm btn-waitlist-class" data-class-name="${item.name}" data-class-trainer="${item.trainer}">
+            <a href="404.html" class="btn btn-secondary btn-sm btn-waitlist-class" data-class-name="${item.name}" data-class-trainer="${item.trainer}">
               <i class="fa-solid fa-clock"></i>
               <span>Join Waitlist</span>
-            </button>
+            </a>
           ` : `
-            <button class="btn btn-primary btn-sm btn-book-class" data-class-id="${item.id}" data-class-name="${item.name}" data-class-time="${item.time}" data-class-trainer="${item.trainer}" data-class-day="${item.day}">
+            <a href="404.html" class="btn btn-primary btn-sm btn-book-class" data-class-id="${item.id}" data-class-name="${item.name}" data-class-time="${item.time}" data-class-trainer="${item.trainer}" data-class-day="${item.day}">
               <span>Book Spot</span>
               <i class="fa-solid fa-arrow-right"></i>
-            </button>
+            </a>
           `}
         </div>
       </div>
@@ -141,37 +141,25 @@
       window.PulseApp.animateGridFilter(container, '.schedule-row');
     }
 
-    // Attach click listeners to "Book Spot" buttons
+    // Attach click listeners to "Book Spot" buttons - redirect to 404 page
     container.querySelectorAll('.btn-book-class').forEach((btn) => {
-      btn.addEventListener('click', function () {
-        const className = btn.getAttribute('data-class-name');
-        const classTime = btn.getAttribute('data-class-time');
-        const classTrainer = btn.getAttribute('data-class-trainer');
-        const classDay = btn.getAttribute('data-class-day');
-
-        openClassBookingModal({
-          name: className,
-          time: classTime,
-          trainer: classTrainer,
-          day: classDay
-        });
+      btn.addEventListener('click', function (e) {
+        try {
+          const page = window.location.pathname.split('/').pop() || 'classes.html';
+          sessionStorage.setItem('stackly_last_section_url', page + '#timetable');
+        } catch (err) {}
+        window.location.href = '404.html';
       });
     });
 
-    // Attach click listeners to "Join Waitlist" buttons
+    // Attach click listeners to "Join Waitlist" buttons - redirect to 404 page
     container.querySelectorAll('.btn-waitlist-class').forEach((btn) => {
-      btn.addEventListener('click', function () {
-        const className = btn.getAttribute('data-class-name');
-        const trainer = btn.getAttribute('data-class-trainer');
-
-        const app = window.StacklyApp || window.PulseApp;
-        if (app?.showToast) {
-          app.showToast(
-            `Waitlist Confirmed! You are #2 on the priority queue for ${className} with Coach ${trainer}. If a spot opens, you will receive an instant notification.`,
-            'info',
-            'WAITLIST RESERVED'
-          );
-        }
+      btn.addEventListener('click', function (e) {
+        try {
+          const page = window.location.pathname.split('/').pop() || 'classes.html';
+          sessionStorage.setItem('stackly_last_section_url', page + '#timetable');
+        } catch (err) {}
+        window.location.href = '404.html';
       });
     });
   }

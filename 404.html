@@ -46,14 +46,44 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="login.html" class="login-link">
+        <a href="login.html" class="btn btn-primary btn-sm">
           <i class="fa-regular fa-user"></i>
           <span>Member Login</span>
         </a>
-        <a href="membership.html" class="btn btn-primary btn-sm">Join Now</a>
+
+        <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer & Overlay -->
+  <div class="drawer-overlay" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo" aria-label="STACKLY HOME">
+        <img src="logo.webp" alt="STACKLY" class="brand-logo-img">
+      </a>
+      <button type="button" class="mobile-drawer-close" aria-label="Close Navigation Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About Us</a>
+      <a href="classes.html" class="mobile-nav-link">Programs</a>
+      <a href="trainers.html" class="mobile-nav-link">Trainers</a>
+      <a href="membership.html" class="mobile-nav-link">Membership Plans</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+      <a href="login.html" class="mobile-nav-link mobile-nav-link-auth">
+        <i class="fa-solid fa-right-to-bracket"></i> Member Sign In
+      </a>
+    </nav>
+  </aside>
 
   <!-- 404 Main Area -->
   <main class="error-page-wrap" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: calc(100vh - var(--header-height));">
@@ -66,11 +96,11 @@
       </p>
 
       <div class="hero-cta-group" style="justify-content: center;">
-        <a href="index.html" class="btn btn-primary btn-lg">
+        <a href="index.html" class="btn btn-primary btn-lg" id="btnGoHome">
           <i class="fa-solid fa-house"></i>
-          <span>Back to Home</span>
+          <span>Go to Home</span>
         </a>
-        <button type="button" onclick="if(document.referrer && !document.referrer.includes('404')) { history.back(); } else { window.location.href='index.html'; }" class="btn btn-secondary btn-lg" id="btnGoBack" aria-label="Go back to previous page">
+        <button type="button" class="btn btn-secondary btn-lg" id="btnGoBack" aria-label="Go back to previous page in particular section">
           <i class="fa-solid fa-arrow-left"></i>
           <span>Go Back</span>
         </button>
@@ -83,5 +113,30 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="js/main.js"></script>
   <script src="js/animations.js"></script>
+  <script>
+    document.getElementById('btnGoBack')?.addEventListener('click', function (e) {
+      e.preventDefault();
+      let savedUrl = '';
+      try {
+        savedUrl = sessionStorage.getItem('stackly_last_section_url');
+      } catch (err) {}
+
+      if (savedUrl && !savedUrl.includes('404')) {
+        window.location.href = savedUrl;
+        return;
+      }
+
+      if (document.referrer && !document.referrer.includes('404')) {
+        if (window.history.length > 1) {
+          window.history.back();
+          return;
+        }
+        window.location.href = document.referrer;
+        return;
+      }
+
+      window.location.href = 'index.html';
+    });
+  </script>
 </body>
 </html>

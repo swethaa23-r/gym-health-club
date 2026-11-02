@@ -121,7 +121,7 @@
       });
     });
 
-    // 3. Mobile Sidebar Toggle
+    // 3. Mobile Sidebar Toggle & Scroll Lock
     const mobileToggle = document.querySelector('.mobile-dash-nav-toggle');
     const sidebar = document.querySelector('.dash-sidebar');
     const overlay = document.querySelector('.dash-sidebar-overlay');
@@ -129,18 +129,38 @@
     function closeSidebar() {
       if (sidebar) sidebar.classList.remove('open');
       if (overlay) overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+
+    function openSidebar() {
+      if (sidebar) sidebar.classList.add('open');
+      if (overlay) overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
     }
 
     if (mobileToggle && sidebar) {
       mobileToggle.addEventListener('click', function () {
-        const isOpen = sidebar.classList.toggle('open');
-        if (overlay) overlay.classList.toggle('open', isOpen);
+        const isOpen = sidebar.classList.contains('open');
+        if (isOpen) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
       });
     }
 
     if (overlay) {
       overlay.addEventListener('click', closeSidebar);
     }
+
+    // Close mobile sidebar on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && sidebar && sidebar.classList.contains('open')) {
+        closeSidebar();
+      }
+    });
 
     // 4. Header Search Bar Logic (Script-Based Validation)
     // If empty -> show script error message. If text entered -> redirect to 404.html
