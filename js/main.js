@@ -1,4 +1,4 @@
-/**
+﻿/**
  * STACKLY FITNESS CLUB — MAIN INTERACTION MODULE
  * Sticky Nav, Mobile Menu Drawer, Dropdowns, Toast System, Modals, Image Fallbacks
  */

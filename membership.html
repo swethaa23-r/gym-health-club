@@ -150,8 +150,10 @@
             <h3 class="pricing-plan-name">Essential</h3>
             <p class="pricing-plan-desc">For dedicated lifters and self-directed athletes.</p>
             <div class="pricing-amount-wrap">
-              <span class="pricing-currency">₹</span>
-              <span class="pricing-amount" id="priceEssential">2,499</span>
+              <div class="pricing-price-group">
+                <span class="pricing-currency">₹</span>
+                <span class="pricing-amount" id="priceEssential">2,499</span>
+              </div>
               <span class="pricing-period">/ month</span>
             </div>
           </div>
@@ -181,8 +183,10 @@
             <h3 class="pricing-plan-name text-accent">Performance</h3>
             <p class="pricing-plan-desc">The complete athletic conditioning and recovery experience.</p>
             <div class="pricing-amount-wrap">
-              <span class="pricing-currency">₹</span>
-              <span class="pricing-amount" id="pricePerformance">4,499</span>
+              <div class="pricing-price-group">
+                <span class="pricing-currency">₹</span>
+                <span class="pricing-amount" id="pricePerformance">4,499</span>
+              </div>
               <span class="pricing-period">/ month</span>
             </div>
           </div>
@@ -211,8 +215,10 @@
             <h3 class="pricing-plan-name">Elite</h3>
             <p class="pricing-plan-desc">VIP coaching, unlimited recovery, and executive luxury perks.</p>
             <div class="pricing-amount-wrap">
-              <span class="pricing-currency">₹</span>
-              <span class="pricing-amount" id="priceElite">7,999</span>
+              <div class="pricing-price-group">
+                <span class="pricing-currency">₹</span>
+                <span class="pricing-amount" id="priceElite">7,999</span>
+              </div>
               <span class="pricing-period">/ month</span>
             </div>
           </div>
@@ -274,11 +280,16 @@
         <p class="lead">Compare all privileges across every membership tier with full transparency.</p>
       </div>
 
+      <div class="table-scroll-hint">
+        <i class="fa-solid fa-arrows-left-right"></i>
+        <span>Swipe horizontally to compare all 3 membership tiers</span>
+      </div>
+
       <div class="comparison-table-wrap">
         <table class="comparison-table" aria-label="Membership Comparison Matrix">
           <thead>
             <tr>
-              <th scope="col" style="width: 40%;">Membership Features</th>
+              <th scope="col">Membership Features</th>
               <th scope="col">Essential</th>
               <th scope="col" class="featured-col">Performance (Recommended)</th>
               <th scope="col">Elite</th>
@@ -463,13 +474,13 @@
           <div class="form-row-2col">
             <div class="form-group">
               <label class="form-label" for="inquiryName">Full Name <span class="required">*</span></label>
-              <input type="text" id="inquiryName" class="form-control" placeholder="Alex Vance" required>
+              <input type="text" id="inquiryName" class="form-control" placeholder="e.g. Alex Vance" required autocomplete="name">
               <div class="form-feedback"></div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="inquiryEmail">Email Address <span class="required">*</span></label>
-              <input type="email" id="inquiryEmail" class="form-control" placeholder="alex@domain.com" required>
+              <input type="email" id="inquiryEmail" class="form-control" placeholder="e.g. alex@example.com" required autocomplete="email">
               <div class="form-feedback"></div>
             </div>
           </div>
@@ -477,12 +488,14 @@
           <div class="form-row-2col">
             <div class="form-group">
               <label class="form-label" for="inquiryPhone">Phone Number <span class="required">*</span></label>
-              <input type="tel" id="inquiryPhone" class="form-control" placeholder="+91 98200 00000" required>
+              <input type="tel" id="inquiryPhone" class="form-control" placeholder="e.g. +91 98200 00000" required autocomplete="tel">
+              <div class="form-feedback"></div>
             </div>
 
             <div class="form-group">
               <label class="form-label" for="inquiryStartDate">Anticipated Start Date</label>
               <input type="date" id="inquiryStartDate" class="form-control">
+              <div class="form-feedback"></div>
             </div>
           </div>
 

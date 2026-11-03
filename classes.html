@@ -542,8 +542,10 @@
             <h3 class="pricing-plan-name">Starter Foundations</h3>
             <p class="pricing-plan-desc">4-Week technique & movement screening program.</p>
             <div class="pricing-amount-wrap">
-              <span class="pricing-currency">₹</span>
-              <span class="pricing-amount">11,999</span>
+              <div class="pricing-price-group">
+                <span class="pricing-currency">₹</span>
+                <span class="pricing-amount">11,999</span>
+              </div>
               <span class="pricing-period">/ 8 sessions</span>
             </div>
           </div>
@@ -563,8 +565,10 @@
             <h3 class="pricing-plan-name text-accent">Athletic Transformation</h3>
             <p class="pricing-plan-desc">12-Week periodized peak performance mentorship.</p>
             <div class="pricing-amount-wrap">
-              <span class="pricing-currency">₹</span>
-              <span class="pricing-amount">32,999</span>
+              <div class="pricing-price-group">
+                <span class="pricing-currency">₹</span>
+                <span class="pricing-amount">32,999</span>
+              </div>
               <span class="pricing-period">/ 24 sessions</span>
             </div>
           </div>
@@ -584,8 +588,10 @@
             <h3 class="pricing-plan-name">VIP Athletic Mastery</h3>
             <p class="pricing-plan-desc">Intensive 1-on-1 coaching for competitive athletes.</p>
             <div class="pricing-amount-wrap">
-              <span class="pricing-currency">₹</span>
-              <span class="pricing-amount">59,999</span>
+              <div class="pricing-price-group">
+                <span class="pricing-currency">₹</span>
+                <span class="pricing-amount">59,999</span>
+              </div>
               <span class="pricing-period">/ 48 sessions</span>
             </div>
           </div>
@@ -614,12 +620,12 @@
           <div class="form-row-2col">
             <div class="form-group">
               <label class="form-label" for="ptName">Full Name <span class="required">*</span></label>
-              <input type="text" id="ptName" class="form-control" placeholder="Alex Vance" required>
+              <input type="text" id="ptName" class="form-control" placeholder="e.g. Alex Vance" required autocomplete="name">
               <div class="form-feedback"></div>
             </div>
             <div class="form-group">
               <label class="form-label" for="ptEmail">Email Address <span class="required">*</span></label>
-              <input type="email" id="ptEmail" class="form-control" placeholder="alex@domain.com" required>
+              <input type="email" id="ptEmail" class="form-control" placeholder="e.g. alex@example.com" required autocomplete="email">
               <div class="form-feedback"></div>
             </div>
           </div>
@@ -937,15 +943,15 @@
         <input type="hidden" id="bookingHiddenClassName" value="">
         <div class="form-group">
           <label class="form-label" for="bookingMemberName">Full Name <span class="required">*</span></label>
-          <input type="text" id="bookingMemberName" class="form-control" placeholder="Alex Vance" required>
+          <input type="text" id="bookingMemberName" class="form-control" placeholder="e.g. Alex Vance" required autocomplete="name">
         </div>
         <div class="form-group">
           <label class="form-label" for="bookingMemberEmail">Email Address <span class="required">*</span></label>
-          <input type="email" id="bookingMemberEmail" class="form-control" placeholder="alex@stacklyclub.com" required>
+          <input type="email" id="bookingMemberEmail" class="form-control" placeholder="e.g. alex@example.com" required autocomplete="email">
         </div>
         <div class="form-group">
           <label class="form-label" for="bookingMemberPhone">Phone Number</label>
-          <input type="tel" id="bookingMemberPhone" class="form-control" placeholder="+91 98200 00000">
+          <input type="tel" id="bookingMemberPhone" class="form-control" placeholder="e.g. +91 98200 00000" autocomplete="tel">
         </div>
         <div class="form-check">
           <input type="checkbox" id="bookingConsent" required checked>

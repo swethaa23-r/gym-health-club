@@ -1,4 +1,4 @@
-/**
+﻿/**
  * STACKLY FITNESS CLUB — MEMBER & ADMIN DASHBOARD LOGIC
  * Session management, header search validation, dynamic tabs, profile validation, 404 redirections
  */

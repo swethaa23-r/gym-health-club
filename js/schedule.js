@@ -1,4 +1,4 @@
-/**
+﻿/**
  * STACKLY FITNESS CLUB — INTERACTIVE SCHEDULE MODULE
  * Day of week filtering, Category filtering, Class Booking Modal Flow
  */

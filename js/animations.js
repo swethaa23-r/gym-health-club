@@ -1,4 +1,4 @@
-/**
+﻿/**
  * STACKLY & PULSE FITNESS CLUB — HIGH-PERFORMANCE GSAP & KINETIC ANIMATION SYSTEM
  * 
  * Interactive Motion Polish:

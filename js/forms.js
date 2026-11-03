@@ -278,28 +278,73 @@
     const form = document.getElementById('membershipInquiryForm');
     if (!form) return;
 
+    const nameInput = document.getElementById('inquiryName');
+    const emailInput = document.getElementById('inquiryEmail');
+    const phoneInput = document.getElementById('inquiryPhone');
+    const planSelect = document.getElementById('inquiryPlanSelect');
+    const consentInput = document.getElementById('inquiryConsent');
+
+    // Real-time error dismissal on user typing
+    [nameInput, emailInput, phoneInput].forEach((input) => {
+      if (!input) return;
+      input.addEventListener('input', function () {
+        if (input.classList.contains('is-invalid')) {
+          input.classList.remove('is-invalid');
+          const group = input.closest('.form-group');
+          const feedback = group ? group.querySelector('.form-feedback') : null;
+          if (feedback) {
+            feedback.textContent = '';
+            feedback.className = 'form-feedback';
+          }
+        }
+      });
+    });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      const nameInput = document.getElementById('inquiryName');
-      const emailInput = document.getElementById('inquiryEmail');
-      const planSelect = document.getElementById('inquiryPlanSelect');
-
       let valid = true;
 
-      if (nameInput && nameInput.value.trim().length < 2) {
-        valid = validateField(nameInput, false, 'Please enter your name') && valid;
-      } else if (nameInput) {
-        validateField(nameInput, true);
+      if (nameInput) {
+        if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+          valid = validateField(nameInput, false, 'Please enter your full name') && valid;
+        } else {
+          validateField(nameInput, true);
+        }
       }
 
-      if (emailInput && !validateEmail(emailInput.value.trim())) {
-        valid = validateField(emailInput, false, 'Please enter a valid email address') && valid;
-      } else if (emailInput) {
-        validateField(emailInput, true);
+      if (emailInput) {
+        if (!emailInput.value.trim() || !validateEmail(emailInput.value.trim())) {
+          valid = validateField(emailInput, false, 'Please enter a valid email address') && valid;
+        } else {
+          validateField(emailInput, true);
+        }
       }
 
-      if (!valid) return;
+      if (phoneInput) {
+        const phoneVal = phoneInput.value.trim();
+        const digitsOnly = phoneVal.replace(/\D/g, '');
+        if (!phoneVal || digitsOnly.length < 8) {
+          valid = validateField(phoneInput, false, 'Please enter a valid phone number') && valid;
+        } else {
+          validateField(phoneInput, true);
+        }
+      }
+
+      if (consentInput && !consentInput.checked) {
+        valid = false;
+        if (window.PulseApp && typeof window.PulseApp.showToast === 'function') {
+          window.PulseApp.showToast('Please agree to terms and onboarding consent.', 'error', 'TERMS REQUIRED');
+        }
+      }
+
+      if (!valid) {
+        const firstInvalid = form.querySelector('.is-invalid');
+        if (firstInvalid) {
+          firstInvalid.focus();
+        }
+        return;
+      }
 
       const submitBtn = form.querySelector('button[type="submit"]');
       const origText = submitBtn ? submitBtn.innerHTML : '';
@@ -316,14 +361,16 @@
           submitBtn.innerHTML = origText;
         }
 
-        window.PulseApp.showToast(
-          `Application received for ${selectedPlan}! Our admissions team will contact you shortly.`,
-          'success',
-          'MEMBERSHIP INQUIRY'
-        );
+        if (window.PulseApp && typeof window.PulseApp.showToast === 'function') {
+          window.PulseApp.showToast(
+            `Application received for ${selectedPlan}! Our admissions team will contact you shortly.`,
+            'success',
+            'MEMBERSHIP INQUIRY'
+          );
+        }
 
         form.reset();
-        document.querySelectorAll('.is-valid').forEach((el) => el.classList.remove('is-valid'));
+        form.querySelectorAll('.is-valid').forEach((el) => el.classList.remove('is-valid'));
       }, 600);
     });
   }
@@ -694,6 +741,22 @@
       form.reset();
     });
   }
+
+  /* --------------------------------------------------------------------------
+     Global Real-Time Input Error Dismissal
+     -------------------------------------------------------------------------- */
+  document.addEventListener('input', function (e) {
+    const input = e.target;
+    if (input && input.classList && input.classList.contains('is-invalid')) {
+      input.classList.remove('is-invalid');
+      const group = input.closest('.form-group');
+      const feedback = group ? group.querySelector('.form-feedback') : null;
+      if (feedback) {
+        feedback.textContent = '';
+        feedback.className = 'form-feedback';
+      }
+    }
+  });
 
   /* --------------------------------------------------------------------------
      Initializer

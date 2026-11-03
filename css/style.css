@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    STACKLY FITNESS CLUB — CORE DESIGN SYSTEM & STYLESHEET
    Brand Colors: Near-Black (#0B0D0C) | Charcoal (#151816) | Neon Lime (#C7FF3D) | White (#FFFFFF)
    Typography: Space Grotesk (Headings) | Inter (Body)
@@ -117,9 +117,8 @@ img, picture, svg, video {
   height: auto;
 }
 
-p, span, a, h1, h2, h3, h4, h5, h6, li, td, th, label {
+p, span, a, h1, h2, h3, h4, h5, h6, li, label {
   overflow-wrap: break-word;
-  word-break: break-word;
 }
 
 /* Reduced Motion */
@@ -1108,7 +1107,9 @@ ul, ol {
 }
 
 .form-control::placeholder {
-  color: var(--color-text-muted);
+  color: #707974;
+  opacity: 0.65;
+  font-weight: 400;
 }
 
 .form-control:focus {
